@@ -1,778 +1,385 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>شركة دمشق للسفر والسياحة | Damascus Travel & Tourism</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts (Cairo & Tajawal) -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#0e466b',
-                        secondary: '#d97706',
-                        accent: '#0284c7',
-                        darkBg: '#0f172a',
-                    },
-                    fontFamily: {
-                        cairo: ['Cairo', 'sans-serif'],
-                        tajawal: ['Tajawal', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body { font-family: 'Cairo', sans-serif; }
-        .hero-gradient { background: linear-gradient(135deg, rgba(14, 70, 107, 0.9) 0%, rgba(15, 23, 42, 0.85) 100%); }
-        .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
-        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
-        .custom-scrollbar::-webkit-scrollbar-track { background: #f1f1f1; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #0e466b; border-radius: 4px; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>شركة دمشق للسفر والسياحة | Damascus Travel & Tourism</title>
+<meta name="description" content="دمشق للسفر والسياحة: تذاكر طيران، برامج سياحية، فيز، وفنادق بأفضل الأسعار. فروع تكريت وأربيل.">
+<meta name="theme-color" content="#0b2f4a">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Tajawal:wght@500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TravelAgency", "name": "شركة دمشق للسفر والسياحة", "alternateName": "Damascus Travel & Tourism", "telephone": "+9647701716661", "email": "demshq.co@gmail.com", "sameAs": ["https://www.instagram.com/demshq.travel/", "https://www.facebook.com/demshq.travel/"], "address": [{"@type": "PostalAddress", "addressLocality": "تكريت", "addressRegion": "صلاح الدين", "addressCountry": "IQ", "streetAddress": "شارع 40 - مقابل عمارة الترنبول"}, {"@type": "PostalAddress", "addressLocality": "أربيل", "addressCountry": "IQ"}]}</script>
+<style>
+:root{--navy:#0b2f4a;--navy2:#071d2f;--gold:#c8963e;--gold2:#e6b866;--cream:#faf6ef;--sand:#f1ebdf;--ink:#1c2733;--mut:#5d6b78;--line:#e6dfd0;--wa:#1faa59;--r:20px;--sh:0 10px 30px -12px rgba(11,47,74,.25)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:'Cairo',sans-serif;background:var(--cream);color:var(--ink);line-height:1.8;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:'Tajawal','Cairo',sans-serif;line-height:1.3}
+a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+button,input,select,textarea{font:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+section{padding:88px 0}
+#blog,#reviews,#contact{content-visibility:auto;contain-intrinsic-size:auto 600px}
+::selection{background:var(--gold2);color:var(--navy2)}
+.eyebrow{display:inline-block;color:var(--gold);font-weight:700;font-size:.85rem;letter-spacing:.04em;margin-bottom:8px}
+.title{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;color:var(--navy)}
+.sub{color:var(--mut);max-width:560px;margin:10px auto 0}
+.head{text-align:center;margin-bottom:48px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:14px;font-weight:700;border:0;cursor:pointer;transition:transform .25s,box-shadow .25s,background .25s}
+.btn:hover{transform:translateY(-2px)}
+.btn-wa{background:var(--wa);color:#fff;box-shadow:0 8px 20px -8px var(--wa)}
+.btn-wa:hover{background:#178a47}
+.btn-navy{background:var(--navy);color:#fff}.btn-navy:hover{background:var(--navy2)}
+.btn-gold{background:var(--gold);color:#fff}.btn-gold:hover{background:#b08030}
+.btn-ghost{background:#fff;color:var(--navy);border:1px solid var(--line)}
+.btn:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--gold2);outline-offset:2px}
+/* progress + topbar + header */
+#prog{position:fixed;top:0;right:0;height:3px;width:0;background:linear-gradient(270deg,var(--gold),var(--gold2));z-index:100}
+.top{background:var(--navy2);color:#cdd8e2;font-size:.8rem;padding:7px 0}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.top a:hover{color:var(--gold2)}.top i{color:var(--gold);margin-left:6px}
+.top select{background:#10324d;color:var(--gold2);border:1px solid #234a68;border-radius:8px;padding:2px 8px;font-size:.8rem}
+header{position:sticky;top:0;z-index:50;background:rgba(250,246,239,.88);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:box-shadow .3s,border-color .3s}
+header.sc{box-shadow:0 6px 24px -14px rgba(0,0,0,.35);border-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px;transition:height .3s}
+header.sc .nav{height:64px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo img{height:56px;width:auto;transition:height .3s}header.sc .logo img{height:48px}
+.soc{display:flex;gap:10px;flex-wrap:wrap}.soc a{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.88rem;padding:9px 16px;border-radius:12px;color:#fff;transition:transform .25s,filter .25s}.soc a:hover{transform:translateY(-2px);filter:brightness(1.1)}.soc .ig{background:linear-gradient(45deg,#f09433,#dc2743 55%,#bc1888)}.soc .fb{background:#1877f2}.soc.sm a{padding:0;width:34px;height:34px;justify-content:center;border-radius:50%;font-size:1rem}.top .soc.sm a{width:26px;height:26px;font-size:.8rem}.top .soc a:hover{color:#fff}.top .soc i{margin:0;color:#fff}
+.logo h1{font-size:1.25rem;font-weight:900;color:var(--navy)}
+.logo small{display:block;font-size:.7rem;color:var(--mut);font-weight:600;margin-top:-4px}
+.menu{display:flex;gap:26px;font-weight:600;font-size:.92rem}
+.menu a{position:relative;padding:6px 0;color:#34424f}
+.menu a::after{content:"";position:absolute;bottom:0;right:0;height:2px;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:right;transition:transform .3s}
+.menu a:hover::after,.menu a.on::after{transform:scaleX(1)}
+.menu a.on{color:var(--navy)}
+.burger{display:none;background:none;border:0;font-size:1.5rem;color:var(--navy);cursor:pointer}
+#mm{display:none;background:var(--cream);border-top:1px solid var(--line);padding:10px 20px 20px}
+#mm.open{display:block}#mm a{display:block;padding:11px 0;font-weight:600;border-bottom:1px solid var(--line)}
+#mm .btn{margin-top:14px;width:100%;border:0}
+/* hero */
+.hero{position:relative;color:#fff;padding:96px 0 0;background:var(--navy2);overflow:hidden}
+.hero-bg{position:absolute;inset:-6% 0;background:url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1600&q=70') center/cover;will-change:transform}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(7,29,47,.78),rgba(11,47,74,.82) 60%,var(--cream) 100%)}
+.hero .wrap{position:relative;z-index:2}
+.hero-in{text-align:center;max-width:780px;margin:0 auto 44px}
+.pill{display:inline-block;border:1px solid rgba(230,184,102,.45);background:rgba(200,150,62,.15);color:var(--gold2);padding:6px 18px;border-radius:99px;font-size:.85rem;font-weight:700;margin-bottom:20px}
+.hero h2{font-size:clamp(2.2rem,6vw,4rem);font-weight:900;letter-spacing:-.01em}
+.hero h2 em{font-style:normal;background:linear-gradient(90deg,var(--gold2),#fff3d6,var(--gold2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{color:#d6e0e9;font-size:clamp(1rem,2vw,1.2rem);margin:18px auto 26px;max-width:620px}
+.cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.trust{display:flex;justify-content:center;gap:clamp(18px,5vw,56px);flex-wrap:wrap;margin:36px 0 40px;color:#e7eef4;font-size:.9rem}
+.trust span{display:flex;align-items:center;gap:8px}.trust i{color:var(--gold2)}
+.search{background:rgba(255,255,255,.97);color:var(--ink);border-radius:24px;padding:24px;box-shadow:0 30px 60px -25px rgba(0,0,0,.55);max-width:980px;margin:0 auto -60px;position:relative}
+.tabs{display:flex;gap:6px;border-bottom:1px solid var(--line);margin-bottom:20px;overflow-x:auto}
+.tabs button{background:none;border:0;border-bottom:3px solid transparent;padding:8px 14px;font-weight:700;color:var(--mut);cursor:pointer;white-space:nowrap;transition:color .2s}
+.tabs button.on{color:var(--navy);border-color:var(--gold)}
+.sf{display:none;grid-template-columns:repeat(4,1fr);gap:14px}
+.sf.on{display:grid}
+label{display:block;font-size:.78rem;font-weight:700;color:#4a5864;margin-bottom:4px}
+input,select,textarea{width:100%;background:#fbf9f4;border:1px solid var(--line);border-radius:12px;padding:11px 12px;font-size:.92rem;color:var(--ink);transition:border-color .2s,box-shadow .2s}
+input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(200,150,62,.18);outline:0}
+.sf .btn{align-self:end;height:46px}
+/* tours */
+#tours{padding-top:140px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
+.card{background:#fff;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);box-shadow:var(--sh);display:flex;flex-direction:column;transition:transform .35s,box-shadow .35s}
+.card:hover{transform:translateY(-6px);box-shadow:0 24px 40px -18px rgba(11,47,74,.35)}
+.ph{position:relative;height:215px;overflow:hidden}
+.ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.card:hover .ph img{transform:scale(1.07)}
+.badge{position:absolute;top:14px;right:14px;color:#fff;font-size:.75rem;font-weight:700;padding:4px 14px;border-radius:99px;backdrop-filter:blur(6px)}
+.cb{padding:22px;display:flex;flex-direction:column;flex:1}
+.meta{display:flex;justify-content:space-between;font-size:.8rem;color:var(--mut);font-weight:600}
+.meta i{color:var(--gold);margin-left:5px}
+.cb h3{font-size:1.3rem;color:var(--navy);margin:8px 0 6px}
+.cb p{color:var(--mut);font-size:.9rem;flex:1}
+.foot{display:flex;justify-content:space-between;align-items:flex-end;border-top:1px dashed var(--line);margin-top:18px;padding-top:16px}
+.foot small{display:block;color:#98a2ab;font-size:.75rem}
+.price{font-family:'Tajawal';font-size:1.55rem;font-weight:900;color:var(--navy);line-height:1.2}
+/* custom trip */
+#custom-trip{background:var(--sand)}
+.formbox{background:#fff;border-radius:28px;padding:clamp(24px,5vw,44px);max-width:860px;margin:0 auto;box-shadow:var(--sh);border:1px solid var(--line)}
+.fg{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-bottom:16px}
+.note{font-size:.78rem;color:var(--mut);text-align:center;margin-top:12px}
+.err{border-color:#d9534f!important}
+/* branches */
+.br{position:relative;padding:28px}
+.br.main{border:2px solid rgba(200,150,62,.5)}
+.br .tag{position:absolute;top:0;left:0;background:var(--navy);color:#fff;font-size:.75rem;font-weight:700;padding:4px 16px;border-radius:0 0 14px 0}
+.br .ic{width:52px;height:52px;border-radius:16px;background:#f6ead2;color:var(--gold);display:grid;place-items:center;font-size:1.25rem}
+.br h3{font-size:1.5rem;color:var(--navy)}
+/* blog */
+#blog{background:var(--sand)}
+.blog img{height:180px;width:100%;object-fit:cover}
+.cat{display:inline-block;font-size:.72rem;font-weight:700;padding:2px 12px;border-radius:99px;background:#f6ead2;color:#8a5f14}
+/* testimonials */
+.tm{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:26px;position:relative}
+.tm::before{content:"”";position:absolute;top:2px;left:18px;font:900 4rem/1 'Tajawal';color:#efe3c8}
+.stars{color:var(--gold);font-size:.8rem;margin-bottom:10px}
+.tm p{font-weight:600;font-size:.95rem;margin-bottom:12px}.tm b{color:var(--mut);font-size:.82rem}
+/* contact */
+#contact{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+#contact::before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;left:-160px;top:-200px;background:radial-gradient(circle,rgba(200,150,62,.22),transparent 70%)}
+.cg{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+#contact h2{font-size:2.3rem;font-weight:900;margin-bottom:12px}
+.ci{display:flex;gap:14px;align-items:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:14px 16px;margin-top:12px}
+.ci i{color:var(--gold2);font-size:1.2rem}.ci small{display:block;color:#a9bccb;font-size:.75rem}
+.ltr{direction:ltr;unicode-bidi:embed;display:inline-block}
+.phones{background:#fff;color:var(--ink);border-radius:24px;padding:26px;box-shadow:0 30px 50px -25px #000}
+.phones h3{color:var(--navy);margin-bottom:14px;font-size:1.1rem}
+.pg{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pg a{display:flex;align-items:center;gap:8px;background:#f8f4ea;border-radius:12px;padding:10px 12px;font-weight:700;font-size:.9rem;transition:background .2s,transform .2s}
+.pg a:hover{background:#f6ead2;transform:translateY(-2px)}.pg i{color:var(--gold)}
+/* footer */
+footer{background:var(--navy2);color:#9fb0be;padding:56px 0 24px;font-size:.9rem}
+.fg4{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;padding-bottom:32px;border-bottom:1px solid #1a3a54}
+footer h4{color:#fff;margin-bottom:12px;font-size:1rem}
+footer a{display:block;padding:3px 0;transition:color .2s}footer a:hover{color:var(--gold2)}
+.copy{text-align:center;padding-top:22px;font-size:.8rem}
+/* floating wa */
+.fab{position:fixed;bottom:calc(20px + env(safe-area-inset-bottom,0px));left:20px;z-index:60;background:var(--wa);color:#fff;border-radius:99px;display:flex;align-items:center;gap:0;padding:14px;box-shadow:0 14px 30px -8px rgba(31,170,89,.7);transition:gap .3s,padding .3s}
+.fab i{font-size:1.7rem}.fab span{max-width:0;overflow:hidden;white-space:nowrap;font-weight:700;transition:max-width .35s}
+.fab:hover{gap:8px;padding:14px 20px}.fab:hover span{max-width:140px}
+/* modal */
+#modal{position:fixed;inset:0;z-index:90;background:rgba(7,29,47,.65);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:16px}
+#modal.open{display:flex}
+.mb{background:#fff;border-radius:26px;max-width:640px;width:100%;max-height:90vh;overflow:auto;padding:30px;position:relative;animation:pop .3s ease}
+@keyframes pop{from{opacity:0;transform:translateY(16px) scale(.97)}}
+.x{position:absolute;top:14px;left:16px;width:36px;height:36px;border-radius:50%;border:0;background:var(--sand);font-size:1.3rem;cursor:pointer}
+.day{background:#faf6ef;border-right:4px solid var(--gold);border-radius:10px;padding:9px 14px;font-size:.9rem;margin-bottom:8px;color:#3d4a56}
+.ie{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0;font-size:.85rem}
+.ie div{border-radius:14px;padding:12px 14px}.ie ul{padding-right:18px;margin-top:4px}
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media(max-width:1000px){.menu,.nav>.btn{display:none}.burger{display:block}.sf.on{grid-template-columns:1fr 1fr}.cg{grid-template-columns:1fr}.fg4{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){section{padding:64px 0}.sf.on,.pg,.ie,.fg4{grid-template-columns:1fr}.search{padding:18px;margin-bottom:-40px}#tours{padding-top:100px}.logo small{display:none}.top .wrap{justify-content:center}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased custom-scrollbar">
+<body>
+<noscript><p style="padding:14px;text-align:center;background:#f6ead2">يرجى تفعيل JavaScript لعرض البرامج والنماذج، أو تواصل معنا عبر الواتساب: 009647701716661</p></noscript>
+<div id="prog"></div>
 
-    <!-- Top Contact Bar -->
-    <div class="bg-slate-900 text-slate-200 text-xs sm:text-sm py-2 px-4">
-        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
-            <div class="flex items-center space-x-4 space-x-reverse flex-wrap gap-y-1">
-                <a href="tel:009647701716661" class="hover:text-amber-400 transition flex items-center gap-1">
-                    <i class="fa-solid fa-phone text-amber-500"></i> 009647701716661
-                </a>
-                <span class="text-slate-600 hidden sm:inline">|</span>
-                <a href="mailto:demshq.co@gmail.com" class="hover:text-amber-400 transition flex items-center gap-1">
-                    <i class="fa-solid fa-envelope text-amber-500"></i> demshq.co@gmail.com
-                </a>
-            </div>
-            <!-- Currency Switcher -->
-            <div class="flex items-center gap-2">
-                <span class="text-xs text-slate-400">العملة:</span>
-                <select id="currencySelector" onchange="changeCurrency(this.value)" class="bg-slate-800 text-amber-400 text-xs px-2 py-1 rounded border border-slate-700 outline-none cursor-pointer">
-                    <option value="IQD">د.ع (IQD)</option>
-                    <option value="USD">$ (USD)</option>
-                </select>
-            </div>
-        </div>
+<div class="top"><div class="wrap">
+  <div><a href="tel:009647701716661"><i class="fa-solid fa-phone"></i><span class="ltr">009647701716661</span></a>
+  &nbsp;&nbsp;<a href="mailto:demshq.co@gmail.com"><i class="fa-solid fa-envelope"></i>demshq.co@gmail.com</a></div>
+  <div style="display:flex;align-items:center;gap:14px"><span class="soc sm"><a class="ig" href="https://www.instagram.com/demshq.travel/" target="_blank" rel="noopener" aria-label="انستغرام"><i class="fa-brands fa-instagram"></i></a><a class="fb" href="https://www.facebook.com/demshq.travel/" target="_blank" rel="noopener" aria-label="فيسبوك"><i class="fa-brands fa-facebook-f"></i></a></span><span>العملة: <select id="cur" aria-label="العملة"><option value="IQD">د.ع (IQD)</option><option value="USD">$ (USD)</option></select></span></div>
+</div></div>
+
+<header id="hd"><div class="wrap">
+  <div class="nav">
+    <a href="#hero" class="logo"><img src="data:image/png;base64,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" alt="شعار دمشق للسفر والسياحة" width="56" height="60">
+      <div><h1>دمشق للسفر والسياحة</h1><small>بوابتك لاستكشاف العالم بأمان وراحة</small></div></a>
+    <nav class="menu" aria-label="القائمة الرئيسية">
+      <a href="#hero">الرئيسية</a><a href="#search-section">الحجوزات</a><a href="#tours">البرامج السياحية</a><a href="#custom-trip">صمم رحلتك</a><a href="#branches">فروعنا</a><a href="#blog">المدونة</a><a href="#contact">تواصل معنا</a>
+    </nav>
+    <a class="btn btn-wa" href="https://wa.me/9647701716661" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> حجز سريع</a>
+    <button class="burger" id="bg" aria-label="القائمة" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+  </div>
+</div>
+<div id="mm">
+  <a href="#hero">الرئيسية</a><a href="#search-section">الحجوزات والطيران</a><a href="#tours">البرامج السياحية</a><a href="#custom-trip">رحلة مخصصة</a><a href="#branches">فروعنا ومواقعنا</a><a href="#blog">المدونة والنصائح</a><a href="#contact">تواصل معنا</a>
+  <a class="btn btn-wa" href="https://wa.me/9647701716661" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> تواصل عبر الواتساب</a>
+</div></header>
+
+<main>
+<section id="hero" class="hero">
+  <div class="hero-bg" id="hbg"></div>
+  <div class="wrap">
+    <div class="hero-in">
+      <span class="pill rv">✨ وكالتكم الأولى للسفر والسياحة</span>
+      <h2 class="rv">انطلق في رحلة أحلامك مع <em>دمشق للسفر</em></h2>
+      <p class="lead rv">تذاكر طيران لجميع أنحاء العالم، برامج سياحية متكاملة، تأشيرات دخول، وفنادق فاخرة بأفضل الأسعار.</p>
+      <div class="cta-row rv">
+        <a href="#tours" class="btn btn-gold">استعرض البرامج <i class="fa-solid fa-arrow-left"></i></a>
+        <a href="https://wa.me/9647701716661" target="_blank" rel="noopener" class="btn btn-wa"><i class="fa-brands fa-whatsapp"></i> تحدث معنا الآن</a>
+      </div>
+      <div class="trust rv">
+        <span><i class="fa-solid fa-plane"></i> تذاكر طيران</span><span><i class="fa-solid fa-passport"></i> تأشيرات دخول</span><span><i class="fa-solid fa-hotel"></i> فنادق فاخرة</span><span><i class="fa-solid fa-headset"></i> دعم على مدار الساعة</span>
+      </div>
     </div>
 
-    <!-- Main Navigation Header -->
-    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
-                <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 bg-primary text-amber-400 rounded-xl flex items-center justify-center text-2xl shadow-lg border border-amber-400/30">
-                        <i class="fa-solid fa-plane-departure"></i>
-                    </div>
-                    <div>
-                        <h1 class="text-2xl font-black text-primary tracking-tight font-tajawal">دمشق للسفر والسياحة</h1>
-                        <p class="text-xs text-slate-500 font-semibold">بوابتك لاستكشاف العالم بأمان وراحة</p>
-                    </div>
-                </div>
-
-                <!-- Desktop Menu -->
-                <nav class="hidden lg:flex items-center gap-6 font-semibold text-slate-700 text-sm">
-                    <a href="#hero" class="hover:text-primary transition py-2 border-b-2 border-transparent hover:border-primary">الرئيسية</a>
-                    <a href="#search-section" class="hover:text-primary transition py-2 border-b-2 border-transparent hover:border-primary">الحجوزات</a>
-                    <a href="#tours" class="hover:text-primary transition py-2 border-b-2 border-transparent hover:border-primary">البرامج السياحية</a>
-                    <a href="#custom-trip" class="hover:text-primary transition py-2 border-b-2 border-transparent hover:border-primary">صمم رحلتك</a>
-                    <a href="#branches" class="hover:text-primary transition py-2 border-b-2 border-transparent hover:border-primary">فروعنا</a>
-                    <a href="#blog" class="hover:text-primary transition py-2 border-b-2 border-transparent hover:border-primary">المدونة</a>
-                    <a href="#contact" class="hover:text-primary transition py-2 border-b-2 border-transparent hover:border-primary">تواصل معنا</a>
-                </nav>
-
-                <!-- Action Button -->
-                <div class="hidden sm:flex items-center gap-3">
-                    <a href="https://wa.me/9647701716661" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2.5 rounded-xl font-bold text-sm shadow-md transition flex items-center gap-2">
-                        <i class="fa-brands fa-whatsapp text-lg"></i>
-                        <span>حجز سريع</span>
-                    </a>
-                </div>
-
-                <!-- Mobile Menu Toggle Button -->
-                <button onclick="toggleMobileMenu()" class="lg:hidden text-slate-700 hover:text-primary text-2xl focus:outline-none">
-                    <i class="fa-solid fa-bars" id="menuIcon"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- Mobile Nav Menu -->
-        <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3 font-semibold text-slate-700">
-            <a href="#hero" onclick="toggleMobileMenu()" class="block py-2 hover:text-primary">الرئيسية</a>
-            <a href="#search-section" onclick="toggleMobileMenu()" class="block py-2 hover:text-primary">الحجوزات والطيران</a>
-            <a href="#tours" onclick="toggleMobileMenu()" class="block py-2 hover:text-primary">البرامج السياحية</a>
-            <a href="#custom-trip" onclick="toggleMobileMenu()" class="block py-2 hover:text-primary">رحلة مخصصة</a>
-            <a href="#branches" onclick="toggleMobileMenu()" class="block py-2 hover:text-primary">فروعنا ومواقعنا</a>
-            <a href="#blog" onclick="toggleMobileMenu()" class="block py-2 hover:text-primary">المدونة والنصائح</a>
-            <a href="#contact" onclick="toggleMobileMenu()" class="block py-2 hover:text-primary">تواصل معنا</a>
-            <a href="https://wa.me/9647701716661" target="_blank" class="block w-full bg-emerald-600 text-white text-center py-2.5 rounded-xl font-bold">
-                <i class="fa-brands fa-whatsapp ml-1"></i> تواصل عبر الواتساب
-            </a>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="hero" class="relative bg-slate-900 text-white py-20 lg:py-28 overflow-hidden bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1920&q=80');">
-        <div class="absolute inset-0 hero-gradient"></div>
-        
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-10">
-                <span class="inline-block bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs sm:text-sm font-bold px-4 py-1.5 rounded-full mb-4">
-                    ✨ وكالتكم الأولى للسفر والسياحة
-                </span>
-                <h2 class="text-3xl sm:text-5xl font-black font-tajawal leading-tight mb-4">
-                    انطلق في رحلة أحلامك مع <span class="text-amber-400">دمشق للسفر</span>
-                </h2>
-                <p class="text-slate-200 text-sm sm:text-lg">
-                    تذاكر طيران لجميع أنحاء العالم، برامج سياحية متكاملة، تأشيرات دخول، وفنادق فاخرة بأفضل الأسعار.
-                </p>
-            </div>
-
-            <!-- Booking Search Bar Container -->
-            <div id="search-section" class="glass-card rounded-2xl shadow-2xl p-6 text-slate-800 max-w-5xl mx-auto">
-                <!-- Search Tabs -->
-                <div class="flex border-b border-slate-200 mb-6 gap-4">
-                    <button onclick="switchSearchTab('flights')" id="tab-flights" class="pb-3 font-bold text-primary border-b-2 border-primary flex items-center gap-2">
-                        <i class="fa-solid fa-plane"></i> حجز طيران
-                    </button>
-                    <button onclick="switchSearchTab('hotels')" id="tab-hotels" class="pb-3 font-bold text-slate-500 border-b-2 border-transparent hover:text-primary flex items-center gap-2">
-                        <i class="fa-solid fa-hotel"></i> حجز فنادق
-                    </button>
-                    <button onclick="switchSearchTab('packages')" id="tab-packages" class="pb-3 font-bold text-slate-500 border-b-2 border-transparent hover:text-primary flex items-center gap-2">
-                        <i class="fa-solid fa-suitcase"></i> باقات سياحية
-                    </button>
-                </div>
-
-                <!-- Flight Search Form -->
-                <form id="form-flights" onsubmit="handleSearch(event, 'طيران')" class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                    <div>
-                        <label class="block text-xs font-bold text-slate-600 mb-1">من (محطة المغادرة)</label>
-                        <select class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-sm focus:ring-2 focus:ring-primary outline-none">
-                            <option>أربيل (EBL)</option>
-                            <option>بغداد (BGW)</option>
-                            <option>السليمانية (ISU)</option>
-                            <option>النجف (NJF)</option>
-                            <option>البصرة (BSR)</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-slate-600 mb-1">إلى (الوجهة)</label>
-                        <select class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-sm focus:ring-2 focus:ring-primary outline-none">
-                            <option>إسطنبول (IST)</option>
-                            <option>دبي (DXB)</option>
-                            <option>عمان (AMM)</option>
-                            <option>القاهرة (CAI)</option>
-                            <option>أنطاليا (AYT)</option>
-                            <option>كوالالمبور (KUL)</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-slate-600 mb-1">تاريخ السفر</label>
-                        <input type="date" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-sm focus:ring-2 focus:ring-primary outline-none" required>
-                    </div>
-                    <div class="flex items-end">
-                        <button type="submit" class="w-full bg-primary hover:bg-slate-800 text-white font-bold py-3 rounded-xl transition shadow-lg flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-magnifying-glass"></i> بحث الرحلات
-                        </button>
-                    </div>
-                </form>
-
-                <!-- Hotel Search Form (Hidden by default) -->
-                <form id="form-hotels" onsubmit="handleSearch(event, 'فنادق')" class="hidden grid grid-cols-1 md:grid-cols-4 gap-4">
-                    <div>
-                        <label class="block text-xs font-bold text-slate-600 mb-1">المدينة أو الفندق</label>
-                        <input type="text" placeholder="مثال: دبي، إسطنبول..." class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-sm focus:ring-2 focus:ring-primary outline-none" required>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-slate-600 mb-1">تاريخ الوصول</label>
-                        <input type="date" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-sm focus:ring-2 focus:ring-primary outline-none" required>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-slate-600 mb-1">عدد الأشخاص والالغرف</label>
-                        <select class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-sm focus:ring-2 focus:ring-primary outline-none">
-                            <option>شخص واحد - غرفة</option>
-                            <option selected>شخصين - غرفة مزدوجة</option>
-                            <option>عائلة (4 أشخاص) - غرفتين</option>
-                        </select>
-                    </div>
-                    <div class="flex items-end">
-                        <button type="submit" class="w-full bg-primary hover:bg-slate-800 text-white font-bold py-3 rounded-xl transition shadow-lg flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-magnifying-glass"></i> البحث عن فنادق
-                        </button>
-                    </div>
-                </form>
-
-                <!-- Packages Search Form (Hidden by default) -->
-                <form id="form-packages" onsubmit="handleSearch(event, 'باقات سياحية')" class="hidden grid grid-cols-1 md:grid-cols-4 gap-4">
-                    <div>
-                        <label class="block text-xs font-bold text-slate-600 mb-1">الوجهة السياحية</label>
-                        <select class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-sm focus:ring-2 focus:ring-primary outline-none">
-                            <option>تركيا (إسطنبول & أنطاليا)</option>
-                            <option>الإمارات (دبي)</option>
-                            <option>ماليزيا</option>
-                            <option>مصر (شرم الشيخ)</option>
-                            <option>أذربيجان (باكو)</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-slate-600 mb-1">شهر السفر المتوقع</label>
-                        <input type="month" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-sm focus:ring-2 focus:ring-primary outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-slate-600 mb-1">نوع الرحلة</label>
-                        <select class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-sm focus:ring-2 focus:ring-primary outline-none">
-                            <option>عائلية</option>
-                            <option>شهر عسل</option>
-                            <option>شبابية / مغامرات</option>
-                        </select>
-                    </div>
-                    <div class="flex items-end">
-                        <button type="submit" class="w-full bg-primary hover:bg-slate-800 text-white font-bold py-3 rounded-xl transition shadow-lg flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-magnifying-glass"></i> عرض البرامج
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tour Packages Section -->
-    <section id="tours" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-black text-primary font-tajawal">أبرز البرامج السياحية المميزة</h2>
-            <p class="text-slate-600 mt-2">عروض وتجارب فريدة شاملة الطيران، الفنادق، والجولات السياحية</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Tour Card 1 -->
-            <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden border border-slate-100 flex flex-col">
-                <div class="relative h-52">
-                    <img src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=800&q=80" alt="إسطنبول" class="w-full h-full object-cover">
-                    <span class="absolute top-3 right-3 bg-amber-500 text-white font-bold text-xs px-3 py-1 rounded-full shadow">شامل التأشيرة والطيران</span>
-                </div>
-                <div class="p-6 flex-1 flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-center text-xs font-semibold text-slate-500 mb-2">
-                            <span><i class="fa-regular fa-clock text-amber-500 ml-1"></i> 8 أيام / 7 ليالي</span>
-                            <span><i class="fa-solid fa-location-dot text-amber-500 ml-1"></i> تركيا</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-800 mb-2">سحر إسطنبول وبورصة</h3>
-                        <p class="text-slate-600 text-sm line-clamp-2 mb-4">
-                            إقامة في فنادق 4 نجوم، رحلة البوسفور، صعود جبل أولوداغ في بورصة، وجولات تسوق شاملة.
-                        </p>
-                    </div>
-                    <div>
-                        <div class="border-t border-slate-100 pt-4 flex justify-between items-center">
-                            <div>
-                                <span class="text-xs text-slate-400 block">تبدأ من</span>
-                                <span class="text-2xl font-black text-primary tour-price" data-usd="650" data-iqd="975000">975,000 د.ع</span>
-                            </div>
-                            <button onclick="openItineraryModal('istanbul')" class="bg-slate-100 hover:bg-primary hover:text-white text-primary font-bold px-4 py-2 rounded-xl text-sm transition">
-                                التفاصيل والبرنامج
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tour Card 2 -->
-            <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden border border-slate-100 flex flex-col">
-                <div class="relative h-52">
-                    <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80" alt="دبي" class="w-full h-full object-cover">
-                    <span class="absolute top-3 right-3 bg-accent text-white font-bold text-xs px-3 py-1 rounded-full shadow">عائلي ومميز</span>
-                </div>
-                <div class="p-6 flex-1 flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-center text-xs font-semibold text-slate-500 mb-2">
-                            <span><i class="fa-regular fa-clock text-amber-500 ml-1"></i> 6 أيام / 5 ليالي</span>
-                            <span><i class="fa-solid fa-location-dot text-amber-500 ml-1"></i> الإمارات</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-800 mb-2">روعة دبي والسفاري</h3>
-                        <p class="text-slate-600 text-sm line-clamp-2 mb-4">
-                            زيارة برج خليفة، رحلة السفاري الصحراوية مع العشاء، ودخول القرية العالمية ومول دبي.
-                        </p>
-                    </div>
-                    <div>
-                        <div class="border-t border-slate-100 pt-4 flex justify-between items-center">
-                            <div>
-                                <span class="text-xs text-slate-400 block">تبدأ من</span>
-                                <span class="text-2xl font-black text-primary tour-price" data-usd="780" data-iqd="1170000">1,170,000 د.ع</span>
-                            </div>
-                            <button onclick="openItineraryModal('dubai')" class="bg-slate-100 hover:bg-primary hover:text-white text-primary font-bold px-4 py-2 rounded-xl text-sm transition">
-                                التفاصيل والبرنامج
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tour Card 3 -->
-            <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden border border-slate-100 flex flex-col">
-                <div class="relative h-52">
-                    <img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=800&q=80" alt="ماليزيا" class="w-full h-full object-cover">
-                    <span class="absolute top-3 right-3 bg-emerald-600 text-white font-bold text-xs px-3 py-1 rounded-full shadow">شهر عسل</span>
-                </div>
-                <div class="p-6 flex-1 flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-center text-xs font-semibold text-slate-500 mb-2">
-                            <span><i class="fa-regular fa-clock text-amber-500 ml-1"></i> 10 أيام / 9 ليالي</span>
-                            <span><i class="fa-solid fa-location-dot text-amber-500 ml-1"></i> ماليزيا</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-800 mb-2">طبيعة ماليزيا ولنكاوي</h3>
-                        <p class="text-slate-600 text-sm line-clamp-2 mb-4">
-                            كوالالمبور، مرتفعات كاميرون، وجزيرة لنكاوي الساحرة مع جولات البحر والتلفريك.
-                        </p>
-                    </div>
-                    <div>
-                        <div class="border-t border-slate-100 pt-4 flex justify-between items-center">
-                            <div>
-                                <span class="text-xs text-slate-400 block">تبدأ من</span>
-                                <span class="text-2xl font-black text-primary tour-price" data-usd="1200" data-iqd="1800000">1,800,000 د.ع</span>
-                            </div>
-                            <button onclick="openItineraryModal('malaysia')" class="bg-slate-100 hover:bg-primary hover:text-white text-primary font-bold px-4 py-2 rounded-xl text-sm transition">
-                                التفاصيل والبرنامج
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Custom Trip Request Section -->
-    <section id="custom-trip" class="bg-slate-100 py-16">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6">
-            <div class="bg-white rounded-3xl shadow-xl p-8 sm:p-10 border border-slate-200">
-                <div class="text-center mb-8">
-                    <span class="text-amber-500 text-3xl mb-2 inline-block"><i class="fa-solid fa-sliders"></i></span>
-                    <h2 class="text-3xl font-black text-primary font-tajawal">طلب رحلة مخصصة (Custom Trip)</h2>
-                    <p class="text-slate-600 text-sm mt-1">صمم رحلتك الخاصة وفقاً لميزانيتك واهتماماتك وسنقوم بتنسيق كل التفاصيل لك</p>
-                </div>
-
-                <form onsubmit="submitCustomTrip(event)" class="space-y-4">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-xs font-bold text-slate-700 mb-1">الاسم الكامل</label>
-                            <input type="text" id="custom-name" required placeholder="أدخل اسمك الكريم" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-sm focus:ring-2 focus:ring-primary outline-none">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-700 mb-1">رقم الهاتف / الواتساب</label>
-                            <input type="tel" id="custom-phone" required placeholder="0770xxxxxxx" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-sm focus:ring-2 focus:ring-primary outline-none">
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                        <div>
-                            <label class="block text-xs font-bold text-slate-700 mb-1">الوجهة المطلوبة</label>
-                            <input type="text" id="custom-dest" required placeholder="مثال: تركيا، أوربا، جورجيا" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-sm focus:ring-2 focus:ring-primary outline-none">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-700 mb-1">عدد المسافرين</label>
-                            <input type="number" id="custom-pax" min="1" value="2" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-sm focus:ring-2 focus:ring-primary outline-none">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-700 mb-1">الميزانية التقديرية</label>
-                            <select id="custom-budget" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-sm focus:ring-2 focus:ring-primary outline-none">
-                                <option>اقتصادية جداً</option>
-                                <option selected>متوسطة / ممتازة</option>
-                                <option>فاخرة V.I.P</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div>
-                        <label class="block text-xs font-bold text-slate-700 mb-1">تفاصيل إضافية أو ملاحظات خاصة</label>
-                        <textarea id="custom-notes" rows="3" placeholder="اذكر تاريخ السفر المقترح، نوع الفنادق، أو أي متطلبات خاصة..." class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-sm focus:ring-2 focus:ring-primary outline-none"></textarea>
-                    </div>
-
-                    <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-3.5 rounded-xl transition shadow-lg flex items-center justify-center gap-2 text-base">
-                        <i class="fa-solid fa-paper-plane"></i> إرسال الطلب مباشرة عبر الواتساب
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Branches Section -->
-    <section id="branches" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-black text-primary font-tajawal">فروعنا ومواقعنا</h2>
-            <p class="text-slate-600 mt-2">يسعدنا استقبالكم في مراكزنا للخدمة المباشرة والاستشارات السياحية</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- Main Tikrit Branch -->
-            <div class="bg-white rounded-2xl shadow-lg p-6 border-2 border-primary/20 relative overflow-hidden flex flex-col justify-between">
-                <div class="absolute top-0 left-0 bg-primary text-white text-xs font-bold px-4 py-1 rounded-br-xl">الفرع الرئيسي</div>
-                <div>
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-xl">
-                            <i class="fa-solid fa-building"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-slate-800">فرع تكريت الرئيسي</h3>
-                            <p class="text-xs text-slate-500">محافظة صلاح الدين</p>
-                        </div>
-                    </div>
-                    <p class="text-slate-700 text-sm mb-4 leading-relaxed">
-                        <i class="fa-solid fa-location-dot text-primary ml-2"></i>
-                        <strong>العنوان:</strong> شارع 40 - مقابل عمارة الترنبول
-                    </p>
-                    <p class="text-slate-600 text-xs mb-6">
-                        خدمة حجز تذاكر، إصدار فيز، ومتابعة كافة الرحلات السياحية البرية والبحرية والجوية.
-                    </p>
-                </div>
-                <a href="https://maps.app.goo.gl/b5nJnaWXBqbHHtX48" target="_blank" class="w-full bg-primary hover:bg-slate-800 text-white font-bold py-3 rounded-xl transition text-center shadow flex items-center justify-center gap-2 text-sm">
-                    <i class="fa-solid fa-map-location-dot text-amber-400"></i> فتح موقع فرع تكريت على الخريطة
-                </a>
-            </div>
-
-            <!-- Erbil Branch -->
-            <div class="bg-white rounded-2xl shadow-lg p-6 border border-slate-200 relative overflow-hidden flex flex-col justify-between">
-                <div>
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-12 h-12 bg-slate-100 text-primary rounded-xl flex items-center justify-center text-xl">
-                            <i class="fa-solid fa-city"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-slate-800">فرع أربيل</h3>
-                            <p class="text-xs text-slate-500">إقليم كردستان العراق</p>
-                        </div>
-                    </div>
-                    <p class="text-slate-700 text-sm mb-4 leading-relaxed">
-                        <i class="fa-solid fa-location-dot text-primary ml-2"></i>
-                        <strong>العنوان:</strong> أربيل - موقع حيوي لخدمة مسافري الإقليم وتسهيل إجراءات الطيران الدولي.
-                    </p>
-                    <p class="text-slate-600 text-xs mb-6">
-                        استقبال وتنسيق رحلات الطيران الدولية وحجوزات الفنادق والفيز لجميع الوجهات.
-                    </p>
-                </div>
-                <a href="https://maps.app.goo.gl/XDLrvWwBbC4QBpAy5" target="_blank" class="w-full bg-slate-800 hover:bg-primary text-white font-bold py-3 rounded-xl transition text-center shadow flex items-center justify-center gap-2 text-sm">
-                    <i class="fa-solid fa-map-location-dot text-amber-400"></i> فتح موقع فرع أربيل على الخريطة
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog Section -->
-    <section id="blog" class="bg-slate-100 py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-black text-primary font-tajawal">مدونة السفر والنصائح</h2>
-                <p class="text-slate-600 mt-2">مقالات وإرشادات هامة لمساعدتك في التخطيط لرحلتك القادمة</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Blog 1 -->
-                <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
-                    <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=600&q=80" class="w-full h-44 object-cover">
-                    <div class="p-5">
-                        <span class="text-xs font-bold text-amber-600 bg-amber-50 px-2.5 py-1 rounded-md">نصائح سفر</span>
-                        <h3 class="text-lg font-bold text-slate-800 mt-2 mb-2">أهم 5 وثائق يجب التأكد منها قبل السفر للخارج</h3>
-                        <p class="text-slate-600 text-xs line-clamp-3">تأكد من صلاحية جواز السفر لأكثر من 6 أشهر وتجهيز الترانزيت وحجوزات الفنادق المؤكدة لتفادي أي تأخير.</p>
-                    </div>
-                </article>
-
-                <!-- Blog 2 -->
-                <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
-                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" class="w-full h-44 object-cover">
-                    <div class="p-5">
-                        <span class="text-xs font-bold text-accent bg-sky-50 px-2.5 py-1 rounded-md">وجهات مميزة</span>
-                        <h3 class="text-lg font-bold text-slate-800 mt-2 mb-2">لماذا تعتبر أنطاليا الخيار الأفضل للعوائل؟</h3>
-                        <p class="text-slate-600 text-xs line-clamp-3">استكشف منتجعات الشاملة كلياً (All-Inclusive) والأنشطة المائية المناسبة للأطفال والكبار.</p>
-                    </div>
-                </article>
-
-                <!-- Blog 3 -->
-                <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
-                    <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=600&q=80" class="w-full h-44 object-cover">
-                    <div class="p-5">
-                        <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-md">توفير المال</span>
-                        <h3 class="text-lg font-bold text-slate-800 mt-2 mb-2">كيف تحصل على أفضل أسعار تذاكر الطيران؟</h3>
-                        <p class="text-slate-600 text-xs line-clamp-3">الحجز المبكر واختيار أوقات السفر خارج مواسم الذروة يضمن لك توفير مبالغ ممتازة.</p>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-black text-primary font-tajawal">آراء ثقة مسافرينا</h2>
-            <p class="text-slate-600 mt-2">نفخر بتقديم أفضل خدمات السفر لعملائنا الكرام</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                <div class="flex text-amber-400 mb-3 text-sm">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                </div>
-                <p class="text-slate-700 text-sm mb-4 font-semibold">"تعامل راقي جداً من كادر فرع تكريت. تم تنظيم رحلتنا إلى تركيا بدون أي مشاكل والفنادق كانت ممتازة."</p>
-                <div class="text-xs text-slate-500 font-bold">- أسامة الدوري</div>
-            </div>
-
-            <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                <div class="flex text-amber-400 mb-3 text-sm">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                </div>
-                <p class="text-slate-700 text-sm mb-4 font-semibold">"أسرع إصدار فيزة وحجز طيران تعاملت معاه. التواصل عبر الواتساب كان سريع وجاوبوا على كل الاستفسارات."</p>
-                <div class="text-xs text-slate-500 font-bold">- مصطفى الناصري</div>
-            </div>
-
-            <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                <div class="flex text-amber-400 mb-3 text-sm">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                </div>
-                <p class="text-slate-700 text-sm mb-4 font-semibold">"برنامج ماليزيا كان فوق المتوقع. تنظيم دقيق واستقبال مباشر في المطار. شكراً لشركة دمشق!"</p>
-                <div class="text-xs text-slate-500 font-bold">- م. أحمد العبيدي</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Numbers & Information Section -->
-    <section id="contact" class="bg-primary text-white py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-                <div>
-                    <h2 class="text-3xl font-black font-tajawal mb-4">تواصل معنا مباشرة</h2>
-                    <p class="text-slate-200 text-sm mb-6 leading-relaxed">
-                        فريقنا متواجد لخدمتكم والإجابة على كافة استفساراتكم حول رحلات الطيران، الفيز، والبرامج السياحية على مدار الساعة.
-                    </p>
-
-                    <div class="space-y-3 mb-6">
-                        <div class="flex items-center gap-3 bg-white/10 p-3 rounded-xl">
-                            <i class="fa-solid fa-phone text-amber-400 text-lg"></i>
-                            <div>
-                                <span class="text-xs text-slate-300 block">خطوط الاتصال المباشر:</span>
-                                <span class="font-bold dir-ltr text-sm">009647701716661 إلى 009647701716666</span>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center gap-3 bg-white/10 p-3 rounded-xl">
-                            <i class="fa-solid fa-envelope text-amber-400 text-lg"></i>
-                            <div>
-                                <span class="text-xs text-slate-300 block">البريد الإلكتروني الرسمي:</span>
-                                <span class="font-bold text-sm">demshq.co@gmail.com</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Phone List Card -->
-                <div class="bg-white text-slate-800 p-6 rounded-2xl shadow-2xl">
-                    <h3 class="text-lg font-bold mb-4 text-primary border-b border-slate-100 pb-2">أرقام الهواتف المتاحة للخدمة:</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <a href="tel:009647701716661" class="p-2.5 bg-slate-50 rounded-lg text-sm font-bold text-slate-700 hover:bg-amber-50 hover:text-amber-700 transition flex items-center gap-2">
-                            <i class="fa-solid fa-headset text-amber-500"></i> 009647701716661
-                        </a>
-                        <a href="tel:009647701716662" class="p-2.5 bg-slate-50 rounded-lg text-sm font-bold text-slate-700 hover:bg-amber-50 hover:text-amber-700 transition flex items-center gap-2">
-                            <i class="fa-solid fa-phone text-primary"></i> 009647701716662
-                        </a>
-                        <a href="tel:009647701716663" class="p-2.5 bg-slate-50 rounded-lg text-sm font-bold text-slate-700 hover:bg-amber-50 hover:text-amber-700 transition flex items-center gap-2">
-                            <i class="fa-solid fa-phone text-primary"></i> 009647701716663
-                        </a>
-                        <a href="tel:009647701716664" class="p-2.5 bg-slate-50 rounded-lg text-sm font-bold text-slate-700 hover:bg-amber-50 hover:text-amber-700 transition flex items-center gap-2">
-                            <i class="fa-solid fa-phone text-primary"></i> 009647701716664
-                        </a>
-                        <a href="tel:009647701716665" class="p-2.5 bg-slate-50 rounded-lg text-sm font-bold text-slate-700 hover:bg-amber-50 hover:text-amber-700 transition flex items-center gap-2">
-                            <i class="fa-solid fa-phone text-primary"></i> 009647701716665
-                        </a>
-                        <a href="tel:009647701716666" class="p-2.5 bg-slate-50 rounded-lg text-sm font-bold text-slate-700 hover:bg-amber-50 hover:text-amber-700 transition flex items-center gap-2">
-                            <i class="fa-solid fa-phone text-primary"></i> 009647701716666
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/9647701716661" target="_blank" title="تواصل عبر الواتساب" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-2xl transition hover:scale-110 flex items-center justify-center group">
-        <i class="fa-brands fa-whatsapp text-3xl"></i>
-        <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-300 ease-in-out font-bold text-sm pr-0 group-hover:pr-2">
-            تحدث معنا
-        </span>
-    </a>
-
-    <!-- Tour Itinerary Modal Structure -->
-    <div id="itineraryModal" class="fixed inset-0 z-50 bg-black/60 hidden backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 relative shadow-2xl">
-            <button onclick="closeItineraryModal()" class="absolute top-4 left-4 text-slate-400 hover:text-slate-700 text-2xl font-bold">
-                &times;
-            </button>
-            <div id="modalContent">
-                <!-- Injected via JavaScript -->
-            </div>
-        </div>
+    <div id="search-section" class="search rv">
+      <div class="tabs" role="tablist">
+        <button class="on" data-t="flights"><i class="fa-solid fa-plane"></i> حجز طيران</button>
+        <button data-t="hotels"><i class="fa-solid fa-hotel"></i> حجز فنادق</button>
+        <button data-t="packages"><i class="fa-solid fa-suitcase"></i> باقات سياحية</button>
+      </div>
+      <form class="sf on" id="f-flights" data-type="طيران">
+        <div><label>من (محطة المغادرة)</label><select><option>أربيل (EBL)</option><option>بغداد (BGW)</option><option>السليمانية (ISU)</option><option>النجف (NJF)</option><option>البصرة (BSR)</option></select></div>
+        <div><label>إلى (الوجهة)</label><select><option>إسطنبول (IST)</option><option>دبي (DXB)</option><option>عمان (AMM)</option><option>القاهرة (CAI)</option><option>أنطاليا (AYT)</option><option>كوالالمبور (KUL)</option></select></div>
+        <div><label>تاريخ السفر</label><input type="date" required></div>
+        <button class="btn btn-navy"><i class="fa-solid fa-magnifying-glass"></i> بحث الرحلات</button>
+      </form>
+      <form class="sf" id="f-hotels" data-type="فنادق">
+        <div><label>المدينة أو الفندق</label><input type="text" placeholder="مثال: دبي، إسطنبول..." required></div>
+        <div><label>تاريخ الوصول</label><input type="date" required></div>
+        <div><label>عدد الأشخاص والغرف</label><select><option>شخص واحد - غرفة</option><option selected>شخصين - غرفة مزدوجة</option><option>عائلة (4 أشخاص) - غرفتين</option></select></div>
+        <button class="btn btn-navy"><i class="fa-solid fa-magnifying-glass"></i> البحث عن فنادق</button>
+      </form>
+      <form class="sf" id="f-packages" data-type="باقات سياحية">
+        <div><label>الوجهة السياحية</label><select><option>تركيا (إسطنبول & أنطاليا)</option><option>الإمارات (دبي)</option><option>ماليزيا</option><option>مصر (شرم الشيخ)</option><option>أذربيجان (باكو)</option></select></div>
+        <div><label>شهر السفر المتوقع</label><input type="month"></div>
+        <div><label>نوع الرحلة</label><select><option>عائلية</option><option>شهر عسل</option><option>شبابية / مغامرات</option></select></div>
+        <button class="btn btn-navy"><i class="fa-solid fa-magnifying-glass"></i> عرض البرامج</button>
+      </form>
     </div>
+  </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-400 text-sm py-8 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
-            <p class="font-bold text-slate-200">شركة دمشق للسفر والسياحة © 2026 - جميع الحقوق محفوظة</p>
-            <p class="text-xs text-slate-500">تكريت: شارع 40 مقابل عمارة الترنبول | أربيل</p>
-        </div>
-    </footer>
+<section id="tours"><div class="wrap">
+  <div class="head rv"><span class="eyebrow">وجهات مختارة</span><h2 class="title">أبرز البرامج السياحية المميزة</h2><p class="sub">عروض وتجارب فريدة شاملة الطيران، الفنادق، والجولات السياحية</p></div>
+  <div class="grid3" id="tg"></div>
+</div></section>
 
-    <!-- JavaScript Application Logic -->
-    <script>
-        // Currency Switching Logic
-        const exchangeRate = 1500; // 1 USD = 1500 IQD
+<section id="custom-trip"><div class="wrap">
+  <div class="head rv"><span class="eyebrow"><i class="fa-solid fa-sliders"></i> رحلة على مقاسك</span><h2 class="title">صمم رحلتك (Custom Trip)</h2><p class="sub">صمم رحلتك الخاصة وفقاً لميزانيتك واهتماماتك وسنقوم بتنسيق كل التفاصيل لك</p></div>
+  <form class="formbox rv" id="ct" novalidate>
+    <div class="fg">
+      <div><label for="c-name">الاسم الكامل</label><input id="c-name" required placeholder="أدخل اسمك الكريم"></div>
+      <div><label for="c-phone">رقم الهاتف / الواتساب</label><input id="c-phone" type="tel" required placeholder="0770xxxxxxx"></div>
+    </div>
+    <div class="fg">
+      <div><label for="c-dest">الوجهة المطلوبة</label><input id="c-dest" required placeholder="مثال: تركيا، أوربا، جورجيا"></div>
+      <div><label for="c-pax">عدد المسافرين</label><input id="c-pax" type="number" min="1" value="2"></div>
+      <div><label for="c-bud">الميزانية التقديرية</label><select id="c-bud"><option>اقتصادية جداً</option><option selected>متوسطة / ممتازة</option><option>فاخرة V.I.P</option></select></div>
+    </div>
+    <div style="margin-bottom:18px"><label for="c-notes">تفاصيل إضافية أو ملاحظات خاصة</label><textarea id="c-notes" rows="3" placeholder="اذكر تاريخ السفر المقترح، نوع الفنادق، أو أي متطلبات خاصة..."></textarea></div>
+    <button class="btn btn-gold" style="width:100%;padding:15px"><i class="fa-solid fa-paper-plane"></i> إرسال الطلب مباشرة عبر الواتساب</button>
+    <p class="note">سيفتح الواتساب برسالة جاهزة، وتصلنا بياناتك فور إرسالها.</p>
+  </form>
+</div></section>
 
-        function changeCurrency(currency) {
-            const priceElements = document.querySelectorAll('.tour-price');
-            priceElements.forEach(el => {
-                const usd = el.getAttribute('data-usd');
-                const iqd = el.getAttribute('data-iqd');
-                if (currency === 'USD') {
-                    el.innerText = `$${usd}`;
-                } else {
-                    el.innerText = `${parseInt(iqd).toLocaleString()} د.ع`;
-                }
-            });
-        }
+<section id="branches"><div class="wrap">
+  <div class="head rv"><span class="eyebrow">زورونا</span><h2 class="title">فروعنا ومواقعنا</h2><p class="sub">يسعدنا استقبالكم في مراكزنا للخدمة المباشرة والاستشارات السياحية</p></div>
+  <div class="grid3" style="grid-template-columns:repeat(auto-fit,minmax(320px,1fr))">
+    <div class="card br main rv"><span class="tag">الفرع الرئيسي</span>
+      <div style="display:flex;gap:14px;align-items:center;margin:14px 0"><div class="ic"><i class="fa-solid fa-building"></i></div><div><h3>فرع تكريت الرئيسي</h3><small style="color:var(--mut)">محافظة صلاح الدين</small></div></div>
+      <p><i class="fa-solid fa-location-dot" style="color:var(--gold);margin-left:8px"></i><strong>العنوان:</strong> شارع 40 - مقابل عمارة الترنبول</p>
+      <p style="color:var(--mut);font-size:.85rem;margin:8px 0 20px;flex:1">خدمة حجز تذاكر، إصدار فيز، ومتابعة كافة الرحلات السياحية البرية والبحرية والجوية.</p>
+      <a class="btn btn-navy" href="https://maps.app.goo.gl/b5nJnaWXBqbHHtX48" target="_blank" rel="noopener"><i class="fa-solid fa-map-location-dot" style="color:var(--gold2)"></i> فتح موقع فرع تكريت على الخريطة</a></div>
+    <div class="card br rv">
+      <div style="display:flex;gap:14px;align-items:center;margin:14px 0"><div class="ic" style="background:#e8eef3;color:var(--navy)"><i class="fa-solid fa-city"></i></div><div><h3>فرع أربيل</h3><small style="color:var(--mut)">إقليم كردستان العراق</small></div></div>
+      <p><i class="fa-solid fa-location-dot" style="color:var(--gold);margin-left:8px"></i><strong>العنوان:</strong> أربيل - موقع حيوي لخدمة مسافري الإقليم وتسهيل إجراءات الطيران الدولي.</p>
+      <p style="color:var(--mut);font-size:.85rem;margin:8px 0 20px;flex:1">استقبال وتنسيق رحلات الطيران الدولية وحجوزات الفنادق والفيز لجميع الوجهات.</p>
+      <a class="btn btn-navy" href="https://maps.app.goo.gl/XDLrvWwBbC4QBpAy5" target="_blank" rel="noopener"><i class="fa-solid fa-map-location-dot" style="color:var(--gold2)"></i> فتح موقع فرع أربيل على الخريطة</a></div>
+  </div>
+</div></section>
 
-        // Mobile Menu Toggle
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('hidden');
-        }
+<section id="blog"><div class="wrap">
+  <div class="head rv"><span class="eyebrow">دليل المسافر</span><h2 class="title">مدونة السفر والنصائح</h2><p class="sub">مقالات وإرشادات هامة لمساعدتك في التخطيط لرحلتك القادمة</p></div>
+  <div class="grid3" id="bl"></div>
+</div></section>
 
-        // Search Tabs Logic
-        function switchSearchTab(tabName) {
-            ['flights', 'hotels', 'packages'].forEach(t => {
-                const btn = document.getElementById(`tab-${t}`);
-                const form = document.getElementById(`form-${t}`);
-                if (t === tabName) {
-                    btn.classList.add('text-primary', 'border-primary');
-                    btn.classList.remove('text-slate-500', 'border-transparent');
-                    form.classList.remove('hidden');
-                } else {
-                    btn.classList.remove('text-primary', 'border-primary');
-                    btn.classList.add('text-slate-500', 'border-transparent');
-                    form.classList.add('hidden');
-                }
-            });
-        }
+<section id="reviews"><div class="wrap">
+  <div class="head rv"><span class="eyebrow">ثقة عملائنا</span><h2 class="title">آراء ثقة مسافرينا</h2><p class="sub">نفخر بتقديم أفضل خدمات السفر لعملائنا الكرام</p></div>
+  <div class="grid3" id="tmg"></div>
+</div></section>
 
-        // Handle Search Submit
-        function handleSearch(e, type) {
-            e.preventDefault();
-            const msg = `مرحباً دمشق للسفر، أود الاستفسار والحجز لـ (${type}) من خلال موقعكم الإلكتروني.`;
-            window.open(`https://wa.me/9647701716661?text=${encodeURIComponent(msg)}`, '_blank');
-        }
+<section id="contact"><div class="wrap cg">
+  <div class="rv">
+    <span class="eyebrow">نحن بخدمتكم</span><h2>تواصل معنا مباشرة</h2>
+    <p style="color:#d0dce6">فريقنا متواجد لخدمتكم والإجابة على كافة استفساراتكم حول رحلات الطيران، الفيز، والبرامج السياحية على مدار الساعة.</p>
+    <div class="ci"><i class="fa-solid fa-phone"></i><div><small>خطوط الاتصال المباشر:</small><b>009647701716661 إلى 009647701716666</b></div></div>
+    <div class="ci"><i class="fa-solid fa-envelope"></i><div><small>البريد الإلكتروني الرسمي:</small><b>demshq.co@gmail.com</b></div></div>
+    <div class="soc" style="margin-top:22px"><a class="btn-wa" style="background:var(--wa)" href="https://wa.me/9647701716661" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> واتساب</a><a class="ig" href="https://www.instagram.com/demshq.travel/" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> انستغرام</a><a class="fb" href="https://www.facebook.com/demshq.travel/" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f"></i> فيسبوك</a></div>
+  </div>
+  <div class="phones rv"><h3>أرقام الهواتف المتاحة للخدمة:</h3><div class="pg" id="pg"></div></div>
+</div></section>
+</main>
 
-        // Submit Custom Trip to WhatsApp
-        function submitCustomTrip(e) {
-            e.preventDefault();
-            const name = document.getElementById('custom-name').value;
-            const phone = document.getElementById('custom-phone').value;
-            const dest = document.getElementById('custom-dest').value;
-            const pax = document.getElementById('custom-pax').value;
-            const budget = document.getElementById('custom-budget').value;
-            const notes = document.getElementById('custom-notes').value;
+<footer><div class="wrap">
+  <div class="fg4">
+    <div><img src="data:image/png;base64,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" alt="دمشق للسفر والسياحة" width="84" height="90" loading="lazy" style="height:90px;width:auto;margin-bottom:10px"><h4>شركة دمشق للسفر والسياحة</h4><p>بوابتك لاستكشاف العالم بأمان وراحة.</p><div class="soc sm" style="margin-top:14px"><a class="ig" href="https://www.instagram.com/demshq.travel/" target="_blank" rel="noopener" aria-label="انستغرام"><i class="fa-brands fa-instagram"></i></a><a class="fb" href="https://www.facebook.com/demshq.travel/" target="_blank" rel="noopener" aria-label="فيسبوك"><i class="fa-brands fa-facebook-f"></i></a><a style="background:var(--wa)" href="https://wa.me/9647701716661" target="_blank" rel="noopener" aria-label="واتساب"><i class="fa-brands fa-whatsapp"></i></a></div></div>
+    <div><h4>روابط سريعة</h4><a href="#tours">البرامج السياحية</a><a href="#custom-trip">صمم رحلتك</a><a href="#branches">فروعنا</a><a href="#blog">المدونة</a></div>
+    <div><h4>تواصل</h4><a href="tel:009647701716661"><span class="ltr">009647701716661</span></a><a href="mailto:demshq.co@gmail.com">demshq.co@gmail.com</a><a href="https://www.instagram.com/demshq.travel/" target="_blank" rel="noopener">انستغرام: demshq.travel</a><a href="https://www.facebook.com/demshq.travel/" target="_blank" rel="noopener">فيسبوك: demshq.travel</a><a href="#branches">تكريت: شارع 40 مقابل عمارة الترنبول | أربيل</a></div>
+  </div>
+  <p class="copy">شركة دمشق للسفر والسياحة © 2026 - جميع الحقوق محفوظة</p>
+</div></footer>
 
-            const text = `*طلب رحلة مخصصة جديدة*%0A` +
-                         `• الاسم: ${name}%0A` +
-                         `• الهاتف: ${phone}%0A` +
-                         `• الوجهة: ${dest}%0A` +
-                         `• عدد المسافرين: ${pax}%0A` +
-                         `• الميزانية: ${budget}%0A` +
-                         `• ملاحظات: ${notes}`;
+<a class="fab" href="https://wa.me/9647701716661" target="_blank" rel="noopener" aria-label="تواصل عبر الواتساب"><i class="fa-brands fa-whatsapp"></i><span>تحدث معنا</span></a>
 
-            window.open(`https://wa.me/9647701716661?text=${text}`, '_blank');
-        }
+<div id="modal" role="dialog" aria-modal="true"><div class="mb"><button class="x" id="mx" aria-label="إغلاق">&times;</button><div id="mc"></div></div></div>
 
-        // Tour Itineraries Database
-        const tourData = {
-            istanbul: {
-                title: "برنامج سحر إسطنبول وبورصة (8 أيام)",
-                days: [
-                    "اليوم الأول: الاستقبال في المطار والتوصيل للفندق للراحة.",
-                    "اليوم الثاني: جولة البوسفور البحرية وزيارة السوق المصري ومعالم إسطنبول.",
-                    "اليوم الثالث: رحلة بورصة الخضراء وركوب التلفريك وتناول الغداء على الجبل.",
-                    "اليوم الرابع: يوم حر للتسوق في مول أوف إسطنبول وشارع الاستقلال.",
-                    "اليوم الخامس: رحلة جزيرة الأميرات وممارسة الأنشطة الترفيهية.",
-                    "اليوم السادس: زيارة منطقة أورتاكوي والمقاهي المطلة على البحر.",
-                    "اليوم السابع: جولة تسوق أخيرة واستعداد للرحيل.",
-                    "اليوم الثامن: التوصيل إلى المطار والعودة للوطن."
-                ],
-                included: ["تذاكر الطيران المباشر", "الإقامة في فندق 4 نجوم مع الافطار", "كافة التنقلات والجولات", "مرشد سياحي"],
-                excluded: ["مصاريف الشخصية والوجبات الإضافية"]
-            },
-            dubai: {
-                title: "برنامج روعة دبي والسفاري (6 أيام)",
-                days: [
-                    "اليوم الأول: الاستقبال بالمطار والاستقرار بالفندق.",
-                    "اليوم الثاني: جولة دبي الحديثة، برج خليفة ودبي مول.",
-                    "اليوم الثالث: رحلة السفاري الصحراوية 4x4 مع العشاء الفلكلوري.",
-                    "اليوم الرابع: زيارة القرية العالمية وحديقة الزهور (Miracle Garden).",
-                    "اليوم الخامس: رحلة بحرية باليخت في دبي مارينا.",
-                    "اليوم السادس: التسوق والتوصيل لمطار دبي."
-                ],
-                included: ["الفيزة والسفر", "الفندق مع الإفطار", "رحلة السفاري واليخت"],
-                excluded: ["رسوم دخول الأماكن الترفيهية الاختيارية"]
-            },
-            malaysia: {
-                title: "برنامج ماليزيا ولنكاوي (10 أيام)",
-                days: [
-                    "اليوم 1-3: كوالالمبور والبرجين التوأم ومرتفعات جنتنج.",
-                    "اليوم 4-7: الطيران الداخلي إلى جزيرة لنكاوي والتلفريك والجولات البحرية.",
-                    "اليوم 8-10: العودة لكوالالمبور للتسوق ثم المغادرة."
-                ],
-                included: ["الطيران الدولي والداخلي", "الفنادق 5 و 4 نجوم", "الإفطار اليومي"],
-                excluded: ["ضريبة السياحة المحلية"]
-            }
-        };
+<script>
+const WA='9647701716661',$=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const wa=t=>window.open(`https://wa.me/${WA}?text=${encodeURIComponent(t)}`,'_blank','noopener');
+const U=(id,w)=>`https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=70`;
+const tours=[
+{k:'istanbul',img:'1524231757912-21f4fe3a7200',alt:'إسطنبول',badge:'شامل التأشيرة والطيران',bc:'#c8963e',dur:'8 أيام / 7 ليالي',loc:'تركيا',t:'سحر إسطنبول وبورصة',d:'إقامة في فنادق 4 نجوم، رحلة البوسفور، صعود جبل أولوداغ في بورصة، وجولات تسوق شاملة.',usd:650,iqd:975000,
+ title:'برنامج سحر إسطنبول وبورصة (8 أيام)',
+ days:['اليوم الأول: الاستقبال في المطار والتوصيل للفندق للراحة.','اليوم الثاني: جولة البوسفور البحرية وزيارة السوق المصري ومعالم إسطنبول.','اليوم الثالث: رحلة بورصة الخضراء وركوب التلفريك وتناول الغداء على الجبل.','اليوم الرابع: يوم حر للتسوق في مول أوف إسطنبول وشارع الاستقلال.','اليوم الخامس: رحلة جزيرة الأميرات وممارسة الأنشطة الترفيهية.','اليوم السادس: زيارة منطقة أورتاكوي والمقاهي المطلة على البحر.','اليوم السابع: جولة تسوق أخيرة واستعداد للرحيل.','اليوم الثامن: التوصيل إلى المطار والعودة للوطن.'],
+ inc:['تذاكر الطيران المباشر','الإقامة في فندق 4 نجوم مع الافطار','كافة التنقلات والجولات','مرشد سياحي'],exc:['مصاريف الشخصية والوجبات الإضافية']},
+{k:'dubai',img:'1512453979798-5ea266f8880c',alt:'دبي',badge:'عائلي ومميز',bc:'#0284c7',dur:'6 أيام / 5 ليالي',loc:'الإمارات',t:'روعة دبي والسفاري',d:'زيارة برج خليفة، رحلة السفاري الصحراوية مع العشاء، ودخول القرية العالمية ومول دبي.',usd:780,iqd:1170000,
+ title:'برنامج روعة دبي والسفاري (6 أيام)',
+ days:['اليوم الأول: الاستقبال بالمطار والاستقرار بالفندق.','اليوم الثاني: جولة دبي الحديثة، برج خليفة ودبي مول.','اليوم الثالث: رحلة السفاري الصحراوية 4x4 مع العشاء الفلكلوري.','اليوم الرابع: زيارة القرية العالمية وحديقة الزهور (Miracle Garden).','اليوم الخامس: رحلة بحرية باليخت في دبي مارينا.','اليوم السادس: التسوق والتوصيل لمطار دبي.'],
+ inc:['الفيزة والسفر','الفندق مع الإفطار','رحلة السفاري واليخت'],exc:['رسوم دخول الأماكن الترفيهية الاختيارية']},
+{k:'malaysia',img:'1596422846543-75c6fc197f07',alt:'ماليزيا',badge:'شهر عسل',bc:'#0e8a5f',dur:'10 أيام / 9 ليالي',loc:'ماليزيا',t:'طبيعة ماليزيا ولنكاوي',d:'كوالالمبور، مرتفعات كاميرون، وجزيرة لنكاوي الساحرة مع جولات البحر والتلفريك.',usd:1200,iqd:1800000,
+ title:'برنامج ماليزيا ولنكاوي (10 أيام)',
+ days:['اليوم 1-3: كوالالمبور والبرجين التوأم ومرتفعات جنتنج.','اليوم 4-7: الطيران الداخلي إلى جزيرة لنكاوي والتلفريك والجولات البحرية.','اليوم 8-10: العودة لكوالالمبور للتسوق ثم المغادرة.'],
+ inc:['الطيران الدولي والداخلي','الفنادق 5 و 4 نجوم','الإفطار اليومي'],exc:['ضريبة السياحة المحلية']}];
+const blog=[
+{img:'1488646953014-85cb44e25828',c:'نصائح سفر',t:'أهم 5 وثائق يجب التأكد منها قبل السفر للخارج',d:'تأكد من صلاحية جواز السفر لأكثر من 6 أشهر وتجهيز الترانزيت وحجوزات الفنادق المؤكدة لتفادي أي تأخير.'},
+{img:'1507525428034-b723cf961d3e',c:'وجهات مميزة',t:'لماذا تعتبر أنطاليا الخيار الأفضل للعوائل؟',d:'استكشف منتجعات الشاملة كلياً (All-Inclusive) والأنشطة المائية المناسبة للأطفال والكبار.'},
+{img:'1436491865332-7a61a109cc05',c:'توفير المال',t:'كيف تحصل على أفضل أسعار تذاكر الطيران؟',d:'الحجز المبكر واختيار أوقات السفر خارج مواسم الذروة يضمن لك توفير مبالغ ممتازة.'}];
+const tms=[['تعامل راقي جداً من كادر فرع تكريت. تم تنظيم رحلتنا إلى تركيا بدون أي مشاكل والفنادق كانت ممتازة.','أسامة الدوري'],['أسرع إصدار فيزة وحجز طيران تعاملت معاه. التواصل عبر الواتساب كان سريع وجاوبوا على كل الاستفسارات.','مصطفى الناصري'],['برنامج ماليزيا كان فوق المتوقع. تنظيم دقيق واستقبال مباشر في المطار. شكراً لشركة دمشق!','م. أحمد العبيدي']];
 
-        // Open Modal
-        function openItineraryModal(tourKey) {
-            const data = tourData[tourKey];
-            if (!data) return;
+// render
+let cur='IQD';
+const fmt=(t)=>cur==='USD'?`$${t.usd.toLocaleString('en')}`:`${t.iqd.toLocaleString('en')} د.ع`;
+$('#tg').innerHTML=tours.map(t=>`<article class="card rv"><div class="ph"><img src="${U(t.img,800)}" alt="${t.alt}" loading="lazy" width="800" height="430"><span class="badge" style="background:${t.bc}">${t.badge}</span></div><div class="cb"><div class="meta"><span><i class="fa-regular fa-clock"></i>${t.dur}</span><span><i class="fa-solid fa-location-dot"></i>${t.loc}</span></div><h3>${t.t}</h3><p>${t.d}</p><div class="foot"><div><small>تبدأ من</small><span class="price" data-k="${t.k}">${fmt(t)}</span></div><button class="btn btn-ghost" data-open="${t.k}">التفاصيل والبرنامج</button></div></div></article>`).join('');
+$('#bl').innerHTML=blog.map(b=>`<article class="card blog rv"><img src="${U(b.img,600)}" alt="${b.t}" loading="lazy" width="600" height="180"><div class="cb"><span class="cat" style="align-self:flex-start">${b.c}</span><h3 style="font-size:1.1rem">${b.t}</h3><p>${b.d}</p></div></article>`).join('');
+$('#tmg').innerHTML=tms.map(m=>`<div class="tm rv"><div class="stars">${'<i class="fa-solid fa-star"></i>'.repeat(5)}</div><p>"${m[0]}"</p><b>- ${m[1]}</b></div>`).join('');
+$('#pg').innerHTML=[1,2,3,4,5,6].map(i=>`<a href="tel:00964770171666${i}"><i class="fa-solid ${i==1?'fa-headset':'fa-phone'}"></i><span class="ltr">00964770171666${i}</span></a>`).join('');
 
-            let html = `<h3 class="text-2xl font-black text-primary mb-4 font-tajawal">${data.title}</h3>`;
-            html += `<h4 class="font-bold text-sm text-slate-800 mb-2">الخطة اليومية (Itinerary):</h4>`;
-            html += `<ul class="space-y-2 mb-6">`;
-            data.days.forEach(day => {
-                html += `<li class="text-xs sm:text-sm text-slate-600 bg-slate-50 p-2.5 rounded-lg border-r-4 border-amber-500">${day}</li>`;
-            });
-            html += `</ul>`;
+// currency
+$('#cur').onchange=e=>{cur=e.target.value;tours.forEach(t=>$(`.price[data-k="${t.k}"]`).textContent=fmt(t))};
 
-            html += `<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs mb-6">`;
-            html += `<div class="bg-emerald-50 p-3 rounded-xl border border-emerald-200">
-                        <strong class="text-emerald-800 block mb-1">✅ التكاليف المشمولة:</strong>
-                        <ul class="list-disc list-inside text-slate-600 space-y-1">
-                            ${data.included.map(i => `<li>${i}</li>`).join('')}
-                        </ul>
-                    </div>`;
-            html += `<div class="bg-rose-50 p-3 rounded-xl border border-rose-200">
-                        <strong class="text-rose-800 block mb-1">❌ غير مشمول:</strong>
-                        <ul class="list-disc list-inside text-slate-600 space-y-1">
-                            ${data.excluded.map(e => `<li>${e}</li>`).join('')}
-                        </ul>
-                    </div>`;
-            html += `</div>`;
+// nav
+const mm=$('#mm'),bg=$('#bg');
+bg.onclick=()=>{const o=mm.classList.toggle('open');bg.setAttribute('aria-expanded',o);bg.firstElementChild.className=o?'fa-solid fa-xmark':'fa-solid fa-bars'};
+$$('#mm a').forEach(a=>a.onclick=()=>{mm.classList.remove('open');bg.firstElementChild.className='fa-solid fa-bars'});
 
-            html += `<a href="https://wa.me/9647701716661?text=أود%20حجز%20${encodeURIComponent(data.title)}" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl text-center block shadow transition">
-                        حجز هذا البرنامج عبر الواتساب
-                    </a>`;
+// search tabs + forms (include chosen values in WhatsApp message)
+$$('.tabs button').forEach(b=>b.onclick=()=>{$$('.tabs button').forEach(x=>x.classList.toggle('on',x===b));$$('.sf').forEach(f=>f.classList.toggle('on',f.id==='f-'+b.dataset.t))});
+$$('.sf').forEach(f=>f.onsubmit=e=>{e.preventDefault();
+  const labels=[...f.querySelectorAll('label')].map(l=>l.textContent),vals=[...f.querySelectorAll('input,select')].map(i=>i.value);
+  wa(`مرحباً دمشق للسفر، أود الاستفسار والحجز لـ (${f.dataset.type}) من خلال موقعكم الإلكتروني.\n`+labels.map((l,i)=>vals[i]?`• ${l}: ${vals[i]}`:'').filter(Boolean).join('\n'))});
 
-            document.getElementById('modalContent').innerHTML = html;
-            document.getElementById('itineraryModal').classList.remove('hidden');
-        }
+// custom trip
+$('#ct').onsubmit=e=>{e.preventDefault();
+  const g=id=>$('#'+id).value.trim();let ok=true;
+  ['c-name','c-phone','c-dest'].forEach(id=>{const bad=!g(id);$('#'+id).classList.toggle('err',bad);if(bad)ok=false});
+  if(!ok){$('#ct .err').focus();return}
+  wa(`*طلب رحلة مخصصة جديدة*\n• الاسم: ${g('c-name')}\n• الهاتف: ${g('c-phone')}\n• الوجهة: ${g('c-dest')}\n• عدد المسافرين: ${g('c-pax')}\n• الميزانية: ${g('c-bud')}\n• ملاحظات: ${g('c-notes')||'-'}`)};
 
-        // Close Modal
-        function closeItineraryModal() {
-            document.getElementById('itineraryModal').classList.add('hidden');
-        }
-    </script>
+// modal
+const md=$('#modal');
+function openM(k){const d=tours.find(t=>t.k===k);if(!d)return;
+  $('#mc').innerHTML=`<h3 class="title" style="font-size:1.6rem;margin-bottom:14px;padding-left:36px">${d.title}</h3><h4 style="margin-bottom:8px;font-size:.95rem">الخطة اليومية (Itinerary):</h4>${d.days.map(x=>`<div class="day">${x}</div>`).join('')}<div class="ie"><div style="background:#ecf8f1;border:1px solid #bfe5d0"><strong style="color:#14683f">✅ التكاليف المشمولة:</strong><ul>${d.inc.map(i=>`<li>${i}</li>`).join('')}</ul></div><div style="background:#fdeff0;border:1px solid #f1c6ca"><strong style="color:#a1252f">❌ غير مشمول:</strong><ul>${d.exc.map(i=>`<li>${i}</li>`).join('')}</ul></div></div><a class="btn btn-wa" style="width:100%" target="_blank" rel="noopener" href="https://wa.me/${WA}?text=${encodeURIComponent('أود حجز '+d.title)}"><i class="fa-brands fa-whatsapp"></i> حجز هذا البرنامج عبر الواتساب</a>`;
+  md.classList.add('open');document.body.style.overflow='hidden';$('#mx').focus()}
+function closeM(){md.classList.remove('open');document.body.style.overflow=''}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-open]');if(b)openM(b.dataset.open);if(e.target===md)closeM()});
+$('#mx').onclick=closeM;document.addEventListener('keydown',e=>{if(e.key==='Escape')closeM()});
+
+// scroll: progress, header, parallax (rAF-throttled), active link
+const hd=$('#hd'),pr=$('#prog'),hb=$('#hbg');let tk=false;
+function onS(){const y=scrollY,h=document.documentElement.scrollHeight-innerHeight;
+  pr.style.width=(h>0?y/h*100:0)+'%';hd.classList.toggle('sc',y>20);
+  if(y<innerHeight)hb.style.transform=`translate3d(0,${y*.18}px,0)`;tk=false}
+addEventListener('scroll',()=>{if(!tk){tk=true;requestAnimationFrame(onS)}},{passive:true});onS();
+const links=$$('.menu a');
+const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
+$$('section[id]').forEach(x=>so.observe(x));
+
+// reveal on scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+$$('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%3)*90+'ms';io.observe(el)});
+</script>
 </body>
 </html>
