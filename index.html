@@ -3,343 +3,258 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>شركة دمشق للسفر والسياحة</title>
-  <!-- Google Fonts & Font Awesome Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <style>
-    :root {
-      --primary: #0d5c3a;
-      --primary-light: #15803d;
-      --accent: #eab308;
-      --dark: #0f172a;
-      --light: #f8fafc;
-      --gray: #64748b;
-      --white: #ffffff;
-    }
+  <title>شركة دمشق للسفر والسياحة - تكريت</title>
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+  <!-- Tailwind CSS & Font Awesome -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            cairo: ['Cairo', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              500: '#16a34a',
+              600: '#0d5c3a',
+              700: '#0b4a2f',
+              800: '#073320',
+            },
+            accent: {
+              400: '#facc15',
+              500: '#eab308',
+              600: '#ca8a04',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
       font-family: 'Cairo', sans-serif;
     }
-
-    body {
-      background-color: #f1f5f9;
-      color: var(--dark);
-      line-height: 1.6;
+    .glass-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
     }
-
-    /* Header & Navigation */
-    header {
-      background: var(--white);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+    .pulse-glow {
+      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+      animation: pulse 2s infinite;
     }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--primary);
-    }
-
-    .logo i {
-      font-size: 1.8rem;
-      color: var(--accent);
-    }
-
-    .contact-top-btn {
-      background: #25d366;
-      color: var(--white);
-      padding: 0.6rem 1.4rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
-    }
-
-    .contact-top-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
-    }
-
-    /* Hero Section */
-    .hero {
-      background: linear-gradient(135deg, rgba(13, 92, 58, 0.9), rgba(15, 23, 42, 0.8)), 
-                  url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
-      color: var(--white);
-      text-align: center;
-      padding: 6rem 2rem;
-    }
-
-    .hero-content {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      margin-bottom: 1rem;
-      line-height: 1.2;
-    }
-
-    .hero p {
-      font-size: 1.25rem;
-      margin-bottom: 2rem;
-      opacity: 0.9;
-    }
-
-    .btn-main {
-      background: var(--accent);
-      color: var(--dark);
-      padding: 0.9rem 2.2rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-size: 1.1rem;
-      font-weight: 700;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      transition: all 0.3s ease;
-    }
-
-    .btn-main:hover {
-      background: #ca8a04;
-      color: var(--white);
-      transform: translateY(-2px);
-    }
-
-    /* Content Layout */
-    .main-container {
-      max-width: 1200px;
-      margin: 4rem auto;
-      padding: 0 2rem;
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 2.5rem;
-    }
-
-    .card {
-      background: var(--white);
-      border-radius: 16px;
-      padding: 2rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.04);
-      margin-bottom: 2rem;
-    }
-
-    .card-title {
-      font-size: 1.4rem;
-      color: var(--primary);
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      border-bottom: 2px solid #f1f5f9;
-      padding-bottom: 0.8rem;
-    }
-
-    /* Info Items */
-    .info-list {
-      list-style: none;
-    }
-
-    .info-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 15px;
-      margin-bottom: 1.2rem;
-    }
-
-    .info-item i {
-      background: #eef2ff;
-      color: var(--primary);
-      padding: 12px;
-      border-radius: 12px;
-      font-size: 1.2rem;
-    }
-
-    .info-item div h4 {
-      font-size: 0.95rem;
-      color: var(--gray);
-    }
-
-    .info-item div p, .info-item div a {
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--dark);
-      text-decoration: none;
-    }
-
-    /* Phone Grid */
-    .phones-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 12px;
-      margin-top: 1rem;
-    }
-
-    .phone-card {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      padding: 10px 15px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      color: var(--dark);
-      font-weight: 600;
-      transition: all 0.2s ease;
-    }
-
-    .phone-card:hover {
-      border-color: var(--primary);
-      background: var(--white);
-      color: var(--primary);
-    }
-
-    /* WhatsApp Float Button */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 30px;
-      left: 30px;
-      background-color: #25d366;
-      color: white;
-      width: 60px;
-      height: 60px;
-      border-radius: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 30px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-      z-index: 1000;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-    }
-
-    /* Footer */
-    footer {
-      background: var(--dark);
-      color: var(--white);
-      text-align: center;
-      padding: 2rem;
-      margin-top: 4rem;
-    }
-
-    @media (max-width: 768px) {
-      .main-container {
-        grid-template-columns: 1fr;
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
       }
-      .hero h1 {
-        font-size: 2rem;
+      70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
       }
     }
   </style>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-500 selection:text-white flex flex-col min-h-screen">
 
-  <!-- Header -->
-  <header>
-    <div class="nav-container">
-      <div class="logo">
-        <i class="fa-solid => fa-plane-departure"></i>
-        <span>شركة دمشق للسفر والسياحة</span>
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Brand Logo -->
+        <a href="#" class="flex items-center gap-3 group">
+          <div class="w-12 h-12 bg-gradient-to-tr from-brand-600 to-brand-500 text-amber-400 rounded-2xl flex items-center justify-center shadow-md shadow-brand-600/20 group-hover:scale-105 transition-transform">
+            <i class="fa-solid fa-plane-departure text-2xl"></i>
+          </div>
+          <div>
+            <span class="block text-xl font-extrabold text-brand-700 tracking-tight leading-none">شركة دمشق</span>
+            <span class="text-xs font-semibold text-slate-500">للسفر والسياحة</span>
+          </div>
+        </a>
+
+        <!-- Header Actions -->
+        <div class="flex items-center gap-3">
+          <a href="https://wa.me/9647701716661" target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-5 py-2.5 rounded-full text-sm shadow-lg shadow-emerald-600/20 transition-all hover:-translate-y-0.5">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+            <span>تواصل معنا الان</span>
+          </a>
+          <a href="tel:009647701716661" class="inline-flex sm:hidden items-center justify-center w-10 h-10 bg-brand-50 text-brand-600 rounded-full hover:bg-brand-100 transition">
+            <i class="fa-solid fa-phone"></i>
+          </a>
+        </div>
       </div>
-      <a href="https://wa.me/9647701716661" target="_blank" class="contact-top-btn">
-        <i class="fa-brands fa-whatsapp"></i> اتصل الآن
-      </a>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>وجهتك الأولى لعالم السفر والرحلات المميزة</h1>
-      <p>نقدم أفضل خيارات الطيران والحجوزات السياحية بأعلى مستويات الخدمة</p>
-      <a href="https://wa.me/9647701716661" target="_blank" class="btn-main">
-        <i class="fa-brands fa-whatsapp"></i> احجز رحلتك مباشرة عبر واتساب
-      </a>
+  <section class="relative bg-slate-900 text-white overflow-hidden py-16 lg:py-24">
+    <!-- Background Overlay with Image -->
+    <div class="absolute inset-0 z-0 opacity-40 mix-blend-overlay">
+      <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1920&q=80" alt="سفر وسياحة" class="w-full h-full object-cover">
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent"></div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-4 text-center">
+      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-white/10 text-amber-300 backdrop-blur-md mb-6 border border-white/10">
+        <i class="fa-solid fa-star text-amber-400"></i> خياركم الأفضل للحجوزات والرحلات السياحية
+      </span>
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
+        اكتشف العالم مع <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-amber-500">شركة دمشق</span>
+      </h1>
+      <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto mb-8 font-light">
+        أفضل العروض والخدمات لرحلات الطيران والحجوزات الفندقية والفيز السياحية بأعلى درجات الراحة والموثوقية.
+      </p>
+
+      <!-- Main Action Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="https://wa.me/9647701716661" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-lg px-8 py-4 rounded-2xl shadow-xl shadow-emerald-500/25 transition-all hover:-translate-y-1">
+          <i class="fa-brands fa-whatsapp text-2xl"></i>
+          <span>حجز سريع عبر واتساب</span>
+        </a>
+        <a href="#location" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold text-base px-6 py-4 rounded-2xl backdrop-blur-md border border-white/20 transition-all">
+          <i class="fa-solid fa-earth-americas text-amber-400"></i>
+          <span>عرض موقعنا على Google Earth</span>
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- Content Section -->
-  <main class="main-container">
-    
-    <!-- Left Column: Quick Contact Info -->
-    <aside>
-      <div class="card">
-        <h3 class="card-title"><i class="fa-solid fa-location-dot"></i> عنوان الشركة</h3>
-        <div class="info-item">
-          <div>
-            <h4>الموقع</h4>
-            <p>تكريت - شارع 40 - مقابل عمارة الترنبول[cite: 1, 2]</p>
+  <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+      <!-- Location Card (Interactive Google Earth & Maps) -->
+      <div id="location" class="lg:col-span-1 bg-white rounded-3xl p-6 sm:p-8 border border-slate-100 shadow-xl shadow-slate-200/50 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 bg-amber-50 text-amber-600 rounded-xl flex items-center justify-center text-lg">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <h2 class="text-xl font-bold text-slate-800">عنوان المقر الرئيسي</h2>
+          </div>
+
+          <!-- Interactive Location Link -->
+          <div class="bg-gradient-to-br from-slate-50 to-brand-50/30 rounded-2xl p-5 border border-slate-200/60 mb-6 group hover:border-brand-500 transition-all">
+            <p class="text-xs text-slate-500 font-semibold mb-1">انقر على العنوان لفتحه في Google Earth:</p>
+            <a href="https://earth.google.com/web/search/تكريت+شارع+40" target="_blank" class="block font-bold text-lg text-brand-700 group-hover:text-brand-500 transition-colors flex items-start gap-2">
+              <i class="fa-solid fa-map-pin text-amber-500 mt-1 shrink-0"></i>
+              <span>تكريت - شارع 40 - مقابل عمارة الترنبول</span>
+            </a>
+            <p class="text-xs text-slate-400 mt-2 flex items-center gap-1">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> يفتح مباشرة في الخريطة والتطبيق
+            </p>
           </div>
         </div>
+
+        <!-- Direct Earth & Maps Buttons -->
+        <div class="space-y-2">
+          <a href="https://earth.google.com/web/search/تكريت+شارع+40" target="_blank" class="w-full inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 px-4 rounded-xl text-sm transition">
+            <i class="fa-solid fa-globe text-cyan-400"></i>
+            <span>فتح في Google Earth 3D</span>
+          </a>
+          <a href="https://maps.google.com/?q=تكريت+شارع+40" target="_blank" class="w-full inline-flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-3 px-4 rounded-xl text-sm transition">
+            <i class="fa-solid fa-map text-emerald-600"></i>
+            <span>فتح في خرائط Google Maps</span>
+          </a>
+        </div>
       </div>
 
-      <div class="card">
-        <h3 class="card-title"><i class="fa-solid fa-envelope"></i> البريد الإلكتروني</h3>
-        <div class="info-item">
-          <div>
-            <h4>راسلنا عبر</h4>
-            <a href="mailto:demshq.co@gmail.com">demshq.co@gmail.com[cite: 1]</a>
+      <div class="lg:col-span-2 space-y-8">
+        
+        <!-- Phone Numbers Grid -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-100 shadow-xl shadow-slate-200/50">
+          <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center text-lg">
+                <i class="fa-solid fa-phone-volume"></i>
+              </div>
+              <div>
+                <h2 class="text-xl font-bold text-slate-800">أرقام الحجز والاستفسار</h2>
+                <p class="text-xs text-slate-500">انقر على الرقم للاتصال به مباشرة</p>
+              </div>
+            </div>
+            <span class="hidden sm:inline-block px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full text-xs font-bold">متاح 24/7</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            <!-- Primary WhatsApp Phone -->
+            <a href="https://wa.me/9647701716661" target="_blank" class="p-4 rounded-2xl bg-emerald-50 hover:bg-emerald-100/80 border border-emerald-200 flex items-center justify-between group transition">
+              <div class="flex items-center gap-3">
+                <i class="fa-brands fa-whatsapp text-emerald-600 text-xl"></i>
+                <span class="font-bold text-slate-800 dir-ltr text-sm">009647701716661</span>
+              </div>
+              <span class="text-xs font-bold text-emerald-700 bg-emerald-200/60 px-2 py-0.5 rounded">واتساب</span>
+            </a>
+
+            <!-- Other Phone Lines -->
+            <a href="tel:009647701716662" class="p-4 rounded-2xl bg-slate-50 hover:bg-brand-50/50 border border-slate-200/80 flex items-center gap-3 group transition">
+              <i class="fa-solid fa-phone text-slate-400 group-hover:text-brand-600"></i>
+              <span class="font-bold text-slate-700 group-hover:text-brand-700 dir-ltr text-sm">009647701716662</span>
+            </a>
+
+            <a href="tel:009647701716663" class="p-4 rounded-2xl bg-slate-50 hover:bg-brand-50/50 border border-slate-200/80 flex items-center gap-3 group transition">
+              <i class="fa-solid fa-phone text-slate-400 group-hover:text-brand-600"></i>
+              <span class="font-bold text-slate-700 group-hover:text-brand-700 dir-ltr text-sm">009647701716663</span>
+            </a>
+
+            <a href="tel:009647701716664" class="p-4 rounded-2xl bg-slate-50 hover:bg-brand-50/50 border border-slate-200/80 flex items-center gap-3 group transition">
+              <i class="fa-solid fa-phone text-slate-400 group-hover:text-brand-600"></i>
+              <span class="font-bold text-slate-700 group-hover:text-brand-700 dir-ltr text-sm">009647701716664</span>
+            </a>
+
+            <a href="tel:009647701716665" class="p-4 rounded-2xl bg-slate-50 hover:bg-brand-50/50 border border-slate-200/80 flex items-center gap-3 group transition">
+              <i class="fa-solid fa-phone text-slate-400 group-hover:text-brand-600"></i>
+              <span class="font-bold text-slate-700 group-hover:text-brand-700 dir-ltr text-sm">009647701716665</span>
+            </a>
+
+            <a href="tel:009647701716666" class="p-4 rounded-2xl bg-slate-50 hover:bg-brand-50/50 border border-slate-200/80 flex items-center gap-3 group transition">
+              <i class="fa-solid fa-phone text-slate-400 group-hover:text-brand-600"></i>
+              <span class="font-bold text-slate-700 group-hover:text-brand-700 dir-ltr text-sm">009647701716666</span>
+            </a>
           </div>
         </div>
-      </div>
-    </aside>
 
-    <!-- Right Column: Phone lines & Services -->
-    <section>
-      <div class="card">
-        <h3 class="card-title"><i class="fa-solid fa-phone-volume"></i> أرقام الهواتف للحجز والاستفسار[cite: 1]</h3>
-        <p style="color: var(--gray); margin-bottom: 1rem;">يمكنك الاتصال بفرعنا مباشرة عبر أي من الأرقام التالية:</p>
-        <div class="phones-grid">
-          <a href="tel:009647701716661" class="phone-card"><i class="fa-solid fa-phone"></i> 009647701716661</a>
-          <a href="tel:009647701716662" class="phone-card"><i class="fa-solid fa-phone"></i> 009647701716662</a>
-          <a href="tel:009647701716663" class="phone-card"><i class="fa-solid fa-phone"></i> 009647701716663</a>
-          <a href="tel:009647701716664" class="phone-card"><i class="fa-solid fa-phone"></i> 009647701716664</a>
-          <a href="tel:009647701716665" class="phone-card"><i class="fa-solid fa-phone"></i> 009647701716665</a>
-          <a href="tel:009647701716666" class="phone-card"><i class="fa-solid fa-phone"></i> 009647701716666[cite: 1]</a>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-3xl p-6 border border-slate-100 shadow-lg shadow-slate-200/40 flex items-center gap-4">
+            <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-xl shrink-0">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div>
+              <h3 class="text-xs font-semibold text-slate-400">البريد الإلكتروني الرسمى</h3>
+              <a href="mailto:demshq.co@gmail.com" class="font-bold text-slate-800 hover:text-brand-600 transition text-sm sm:text-base">demshq.co@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-3xl p-6 border border-slate-100 shadow-lg shadow-slate-200/40 flex items-center gap-4">
+            <div class="w-12 h-12 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center text-xl shrink-0">
+              <i class="fa-solid fa-globe"></i>
+            </div>
+            <div>
+              <h3 class="text-xs font-semibold text-slate-400">الموقع الإلكتروني</h3>
+              <p class="font-bold text-slate-800 text-sm sm:text-base">شركة دمشق للسفر والسياحة</p>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
 
+      </div>
+
+    </div>
   </main>
 
-  <!-- WhatsApp Floating Button -->
-  <a href="https://wa.me/9647701716661" target="_blank" class="whatsapp-float" title="تواصل معنا على واتساب">
+  <a href="https://wa.me/9647701716661" target="_blank" class="fixed bottom-6 left-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-2xl transition-transform hover:scale-110 pulse-glow" title="تواصل معنا عبر واتساب">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
-  <!-- Footer -->
-  <footer>
-    <p>جميع الحقوق محفوظة &copy; شركة دمشق للسفر والسياحة[cite: 1]</p>
+  <footer class="bg-slate-900 text-slate-400 text-sm py-8 border-t border-slate-800 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 text-center space-y-2">
+      <p class="font-bold text-slate-200">شركة دمشق للسفر والسياحة</p>
+      <p class="text-xs text-slate-500">تكريت - شارع 40 - مقابل عمارة الترنبول</p>
+      <p class="text-xs text-slate-600 pt-4">&copy; جميع الحقوق محفوظة</p>
+    </div>
   </footer>
 
 </body>
