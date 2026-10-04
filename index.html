@@ -263,69 +263,70 @@
           <div class="relative">
             <input type="text" id="searchDestination" required placeholder="مثال: اسطنبول، دبي، القاهرة..." value="اسطنبول - تركيا" class="w-full bg-slate-50 border border-slate-200 rounded-2xl py-3.5 px-4 font-bold text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-emeraldBrand-500 focus:bg-white transition">
             <i class="fa-solid fa-compass absolute left-4 top-4 text-slate-400"></i>
-          </div>
-        </div>
+            <div id="contact" class="mt-16 bg-white rounded-3xl p-8 shadow-xl border border-slate-100">
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <span class="text-blue-600 font-bold tracking-wider uppercase text-xs">فروعنا وخريطتنا</span>
+                    <h3 class="text-3xl font-black text-slate-800 mt-2">تواصل معنا وزر أقرب فرع إليك</h3>
+                    <p class="text-slate-500 mt-2">نحن في خدمتكم في فرعينا الرئيسي والفرعي لتقديم أفضل خدمات السفر والسياحة</p>
+                </div>
 
-        <!-- Dates (Departure & Return) -->
-        <div>
-          <label class="block text-xs font-bold text-slate-500 mb-1.5"><i class="fa-solid fa-calendar-days text-emeraldBrand-600 me-1"></i> تاريخ الذهاب والعودة</label>
-          <input type="date" id="searchDate" required class="w-full bg-slate-50 border border-slate-200 rounded-2xl py-3 px-3 font-bold text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-emeraldBrand-500 focus:bg-white transition">
-        </div>
+                <!-- Branches Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                    <!-- Tikrit Branch -->
+                    <div class="bg-gradient-to-br from-blue-50 to-slate-50 p-6 rounded-2xl border border-blue-100 relative overflow-hidden group hover:shadow-lg transition">
+                        <div class="absolute top-0 left-0 bg-blue-600 text-white text-xs px-3 py-1 rounded-br-lg font-bold">الفرع الرئيسي</div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center text-xl shrink-0">
+                                <i class="fas font-solid fa-location-dot"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-xl font-bold text-slate-800">فرع تكريت</h4>
+                                <p class="text-slate-600 mt-1 text-sm"><i class="fas fa-map-marker-alt text-blue-500 ml-1"></i> تكريت - شارع 40 - مقابل عمارة الترنبول</p>
+                                <p class="text-slate-600 mt-1 text-sm"><i class="fab fa-whatsapp text-green-500 ml-1"></i> 009647701716661</p>
+                                
+                                <a href="https://maps.app.goo.gl/b5nJnaWXBqbHHtX48" target="_blank" rel="noopener noreferrer" 
+                                   class="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold rounded-xl transition shadow-md shadow-blue-200">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                    <span>عرض على خرائط Google</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
-        <!-- Passengers / Count -->
-        <div>
-          <label class="block text-xs font-bold text-slate-500 mb-1.5"><i class="fa-solid fa-users text-emeraldBrand-600 me-1"></i> عدد المسافرين</label>
-          <select id="searchPassengers" class="w-full bg-slate-50 border border-slate-200 rounded-2xl py-3.5 px-3 font-bold text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-emeraldBrand-500 focus:bg-white transition cursor-pointer">
-            <option value="1">1 شخص (بالغ)</option>
-            <option value="2" selected>2 شخص (بالغين)</option>
-            <option value="3">عائلة (3-4 أفراد)</option>
-            <option value="5">مجموعة (5+ أفراد)</option>
-          </select>
-        </div>
+                    <!-- Erbil Branch -->
+                    <div class="bg-gradient-to-br from-slate-50 to-indigo-50 p-6 rounded-2xl border border-indigo-100 relative overflow-hidden group hover:shadow-lg transition">
+                        <div class="absolute top-0 left-0 bg-indigo-600 text-white text-xs px-3 py-1 rounded-br-lg font-bold">فرع أربيل</div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-indigo-600 text-white flex items-center justify-center text-xl shrink-0">
+                                <i class="fas font-solid fa-building"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-xl font-bold text-slate-800">فرع أربيل</h4>
+                                <p class="text-slate-600 mt-1 text-sm"><i class="fas fa-map-marker-alt text-indigo-500 ml-1"></i> أربيل - موقع الفرع المباشر</p>
+                                <p class="text-slate-600 mt-1 text-sm"><i class="fab fa-whatsapp text-green-500 ml-1"></i> 009647701716661</p>
+                                
+                                <a href="https://maps.app.goo.gl/XDLrvWwBbC4QBpAy5" target="_blank" rel="noopener noreferrer" 
+                                   class="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-bold rounded-xl transition shadow-md shadow-indigo-200">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                    <span>عرض على خرائط Google</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- Submit Search -->
-        <div>
-          <button type="submit" class="w-full bg-emeraldBrand-600 hover:bg-emeraldBrand-700 text-white font-extrabold py-3.5 px-6 rounded-2xl shadow-lg shadow-emeraldBrand-600/30 transition flex items-center justify-center gap-2">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <span>ابحث الآن</span>
-          </button>
-        </div>
-      </form>
-
-    </div>
-  </section>
-
-  <!-- Tour Packages Section -->
-  <section id="tours" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-    <div class="text-center max-w-3xl mx-auto mb-12">
-      <span class="text-xs font-black tracking-widest text-emeraldBrand-600 uppercase bg-emeraldBrand-50 px-3 py-1 rounded-full border border-emeraldBrand-200">برامج سياحية متكاملة</span>
-      <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3">أفخم الرحلات الجاهزة الشاملة للطيران والفندق</h2>
-      <p class="text-slate-500 text-sm sm:text-base mt-2">اختر وجهتك المفضلة واستمتع بجدول رحلة مدروس يوماً بيوم مع شفافية كاملة بالأسعار.</p>
-    </div>
-
-    <!-- Tour Cards Grid -->
-    <div id="toursGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Tours dynamically injected via JS below for interactive multi-currency & modal support -->
-    </div>
-  </section>
-
-  <!-- Custom Trip Builder Request -->
-  <section id="custom-trip" class="bg-gradient-to-br from-slate-900 via-emeraldBrand-950 to-slate-900 text-white py-16 my-12 relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        
-        <div>
-          <span class="text-goldAccent-400 text-xs font-bold uppercase tracking-widest bg-goldAccent-400/10 px-3 py-1 rounded-full border border-goldAccent-400/20">خدمة التخصيص الفاخرة</span>
-          <h2 class="text-3xl sm:text-4xl font-black mt-4 leading-tight">صمّم برنامجك السياحي حسب ميزانيتك ورغبتك</h2>
-          <p class="text-slate-300 text-sm sm:text-base mt-4 leading-relaxed">
-            لم تجد الرحلة المناسبة؟ حدد وجهتك، ميزانيتك، وعدد الأيام، وسيقوم فريق شركة دمشق للسفر والسياحة بإعداد برنامج سياحي خاص بك بدقة متناهية وإرساله إليك مباشرة عبر الواتساب.
-          </p>
-
-          <div class="mt-8 space-y-4">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-xl bg-emeraldBrand-600/30 text-emeraldBrand-400 flex items-center justify-center font-bold">
-                <i class="fa-solid fa-check"></i>
-              </div>
+                <!-- Fast Contact & WhatsApp Action -->
+                <div class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+                    <div class="text-center md:text-right">
+                        <h4 class="text-2xl font-bold">هل لديك استفسار أو تريد الحجز المباشر؟</h4>
+                        <p class="text-blue-100 mt-1">تواصل مع كادر شركة دمشق عبر الواتساب مباشرة للإجابة على جميع استفساراتك</p>
+                    </div>
+                    <a href="https://wa.me/9647701716661" target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-xl font-bold transition flex items-center gap-2 shrink-0 shadow-lg">
+                        <i class="fab fa-whatsapp text-2xl"></i>
+                        <span>مراسلة الواتساب (009647701716661)</span>
+                    </a>
+                </div>
+            </div>
               <span class="text-sm font-semibold">حجوزات طيران مخصصة على أفضل الخطوط الجوية</span>
             </div>
             <div class="flex items-center gap-3">
