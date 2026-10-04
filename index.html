@@ -1,82 +1,346 @@
-<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>شركة دمشق للسفر والسياحة</title>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#eef3f8;--tx:#1b2a38;--mu:#566574;--pr:#0f4c75;--ac:#e8912d;--gl:rgba(255,255,255,.55);--gb:rgba(255,255,255,.7);--sh:0 8px 32px rgba(15,76,117,.15);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b121a;--tx:#eef2f5;--mu:#9fb0bd;--pr:#6cb6ea;--ac:#f0a24a;--gl:rgba(28,42,56,.55);--gb:rgba(255,255,255,.12);--sh:0 8px 32px rgba(0,0,0,.4)}}
-:root[data-theme="dark"]{--bg:#0b121a;--tx:#eef2f5;--mu:#9fb0bd;--pr:#6cb6ea;--ac:#f0a24a;--gl:rgba(28,42,56,.55);--gb:rgba(255,255,255,.12);--sh:0 8px 32px rgba(0,0,0,.4)}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:80px}
-body{margin:0;color:var(--tx);font-family:'Cairo',Tahoma,Arial,sans-serif;line-height:1.7;background:var(--bg);min-height:100vh}
-body:before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(circle at 15% 20%,#1b6ca866,transparent 40%),radial-gradient(circle at 85% 15%,#e8912d55,transparent 38%),radial-gradient(circle at 70% 85%,#2fb5a044,transparent 40%),radial-gradient(circle at 10% 90%,#7a5af844,transparent 38%)}
-a{color:inherit;text-decoration:none}.w{max-width:1050px;margin:auto;padding:0 20px}
-.gl{background:var(--gl);-webkit-backdrop-filter:blur(18px) saturate(170%);backdrop-filter:blur(18px) saturate(170%);border:1px solid var(--gb);box-shadow:var(--sh)}
-nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;margin:10px auto;max-width:1050px;border-radius:40px;width:calc(100% - 24px)}
-nav .in{display:flex;align-items:center;justify-content:space-between;height:56px;padding:0 20px}
-.lg{font-weight:800;color:var(--pr);display:flex;gap:8px;align-items:center}.lg b{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--ac),#ffcf8a)}
-nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0;font-weight:600;font-size:.95rem}nav ul a:hover{color:var(--ac)}
-.hero{padding:50px 0 40px}.hero .w{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
-.hero h1{font-size:clamp(2rem,5vw,3.2rem);margin:0 0 12px;line-height:1.3;font-weight:800;color:var(--pr)}.hero p{color:var(--mu);font-size:1.1rem;margin:0 0 24px}
-.btn{display:inline-block;padding:12px 26px;border-radius:30px;margin-inline-end:10px;margin-bottom:8px;border:0;cursor:pointer;font:inherit;font-weight:700;transition:.2s}
-.btn:hover{transform:translateY(-2px)}.b1{background:linear-gradient(135deg,var(--ac),#f6b45c);color:#1e1405;box-shadow:0 6px 18px #e8912d55}.b2{background:var(--gl);border:1px solid var(--gb);color:var(--tx);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
-.air{border-radius:28px;padding:12px;cursor:pointer;transition:.3s}.air:hover{transform:translateY(-6px) rotate(-.6deg)}
-.fr{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,#0f4c7566,#e8912d44);display:flex;align-items:center;justify-content:center}
-.fr img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.fr svg{width:90px;height:90px;stroke:var(--pr);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
-.cap{padding:10px 8px 2px;font-weight:700;color:var(--pr);display:flex;justify-content:space-between;align-items:center}.cap small{color:var(--mu);font-weight:400}
-section{padding:50px 0}h2{font-size:1.8rem;color:var(--pr);margin:0 0 6px}.sub{color:var(--mu);margin:0 0 28px}
-.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.c{border-radius:22px;padding:24px;transition:.25s;display:block}.k{cursor:pointer}.k:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(15,76,117,.25)}
-.ic{width:52px;height:52px;border-radius:16px;background:linear-gradient(135deg,#e8912d33,#ffffff44);border:1px solid var(--gb);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
-.ic svg{width:28px;height:28px;stroke:var(--pr);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.c h3{margin:0 0 6px;font-size:1.15rem}.c p{margin:0;color:var(--mu);font-size:.95rem}
-.br{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}.tag{font-size:.8rem;background:var(--pr);color:#fff;padding:2px 12px;border-radius:20px;display:inline-block;margin-bottom:8px}
-.ph{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
-.ph a{text-align:center;border-radius:14px;padding:10px;font-weight:600;direction:ltr;transition:.2s;background:var(--gl);border:1px solid var(--gb)}.ph a:hover{background:var(--ac);color:#1e1405}
-.cta{text-align:center;border-radius:28px;padding:44px 20px}.cta h2{margin-bottom:4px}
-footer{text-align:center;color:var(--mu);padding:26px 0;font-size:.9rem}
-.ov{position:fixed;inset:0;z-index:50;background:rgba(8,18,28,.45);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .25s}
-.ov.on{opacity:1;pointer-events:auto}
-.md{position:relative;width:min(440px,100%);border-radius:28px;padding:32px 26px 26px;text-align:center;transform:translateY(30px) scale(.92);transition:transform .35s cubic-bezier(.2,.9,.3,1.25)}
-.ov.on .md{transform:none}.md .ic{margin:0 auto 14px;width:64px;height:64px}.md .ic svg{width:34px;height:34px}.md h3{margin:0 0 8px;font-size:1.4rem;color:var(--pr)}.md p{margin:0 0 20px;color:var(--mu)}
-.x{position:absolute;top:12px;inset-inline-start:12px;width:36px;height:36px;border-radius:50%;border:1px solid var(--gb);background:var(--gl);color:var(--tx);font-size:1.2rem;cursor:pointer}
-@media(max-width:760px){.hero .w{grid-template-columns:1fr}nav ul{gap:12px;font-size:.85rem}.lg span{display:none}}
-@media(prefers-reduced-motion:reduce){*{transition:none!important}}
-</style></head><body>
-<nav class="gl"><div class="in"><a class="lg" href="#top"><b></b><span>دمشق للسفر والسياحة</span></a><ul><li><a href="#services">خدماتنا</a></li><li><a href="#branches">فروعنا</a></li><li><a href="#contact">تواصل</a></li></ul></div></nav>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>شركة دمشق للسفر والسياحة</title>
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --primary: #0d5c3a;
+      --primary-light: #15803d;
+      --accent: #eab308;
+      --dark: #0f172a;
+      --light: #f8fafc;
+      --gray: #64748b;
+      --white: #ffffff;
+    }
 
-<header class="hero" id="top"><div class="w"><div><h1>شركة دمشق للسفر والسياحة</h1><p>مكتب معروف في مدينة تكريت لخدمات السفر والتأشيرات والنقل البري والجوي. نخطط رحلتك وتكمل إجراءاتك بكل سهولة.</p>
-<a class="btn b1" href="https://wa.me/9647701716661" target="_blank" rel="noopener">اتصل بنا الآن</a><a class="btn b2" href="#services">تعرّف على خدماتنا</a></div>
-<div class="air gl k" data-t="الخطوط الجوية العراقية" data-d="للاستفسار عن الرحلات الجوية والحجز، تواصل معنا وسنرتب لك رحلتك." data-i="plane" role="button" tabindex="0">
-<div class="fr"><svg viewBox="0 0 24 24"><path d="M2 16l20-6-4-4-6 3-6-4-2 1 4 5-4 2z"/></svg><img src="iraqi-airways.jpg" alt="الخطوط الجوية العراقية" onerror="this.remove()"></div>
-<div class="cap">الخطوط الجوية العراقية <small>اضغط للتفاصيل</small></div></div></div></header>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Cairo', sans-serif;
+    }
 
-<section id="services"><div class="w"><h2>خدماتنا</h2><p class="sub">اضغط على أي خدمة لمعرفة المزيد</p>
-<div class="g">
-<div class="c gl k" data-t="السفر والطيران" data-d="حجز رحلات جوية وترتيب السفر إلى الوجهات المختلفة." data-i="plane" role="button" tabindex="0"><div class="ic"><svg viewBox="0 0 24 24"><path d="M2 16l20-6-4-4-6 3-6-4-2 1 4 5-4 2z"/></svg></div><h3>السفر والطيران</h3><p>حجز رحلات جوية وترتيب السفر إلى الوجهات المختلفة.</p></div>
-<div class="c gl k" data-t="التأشيرات" data-d="مساعدتك بإجراءات التأشيرات وتجهيز المعاملات المطلوبة." data-i="visa" role="button" tabindex="0"><div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M8 17h8"/></svg></div><h3>التأشيرات</h3><p>مساعدتك بإجراءات التأشيرات وتجهيز المعاملات المطلوبة.</p></div>
-<div class="c gl k" data-t="النقل البري" data-d="خدمات نقل بري مريحة بين المدن والدول." data-i="bus" role="button" tabindex="0"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="11" rx="2"/><circle cx="8" cy="19" r="1.5"/><circle cx="16" cy="19" r="1.5"/><path d="M3 11h18"/></svg></div><h3>النقل البري</h3><p>خدمات نقل بري مريحة بين المدن والدول.</p></div>
-<div class="c gl k" data-t="السياحة" data-d="برامج سياحية ورحلات لأجمل الوجهات." data-i="pin" role="button" tabindex="0"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s7-6 7-12a7 7 0 10-14 0c0 6 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></div><h3>السياحة</h3><p>برامج سياحية ورحلات لأجمل الوجهات.</p></div>
-</div></div></section>
+    body {
+      background-color: #f1f5f9;
+      color: var(--dark);
+      line-height: 1.6;
+    }
 
-<section id="branches"><div class="w"><h2>فروعنا</h2><p class="sub">نحن قريبين منك</p>
-<div class="br"><div class="c gl k" data-t="فرع تكريت" data-d="شارع 40 – مقابل عمارة الترنبول" data-i="pin" role="button" tabindex="0"><span class="tag">المكتب الرئيسي</span><h3>تكريت</h3><p>شارع 40 – مقابل عمارة الترنبول</p></div>
-<div class="c gl k" data-t="فرع أربيل" data-d="شارع 100 متري – مجاور بانزيخانة آكار" data-i="pin" role="button" tabindex="0"><span class="tag">فرع</span><h3>أربيل</h3><p>شارع 100 متري – مجاور بانزيخانة آكار</p></div></div></div></section>
+    /* Header & Navigation */
+    header {
+      background: var(--white);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-<section id="contact"><div class="w"><h2>تواصل معنا</h2><p class="sub">اضغط على أي رقم للاتصال مباشرة</p>
-<div class="c gl"><div class="ph">
-<a href="tel:009647701716661">009647701716661</a><a href="tel:009647701716662">009647701716662</a><a href="tel:009647701716663">009647701716663</a><a href="tel:009647701716664">009647701716664</a><a href="tel:009647701716665">009647701716665</a><a href="tel:009647701716666">009647701716666</a><a href="tel:07722166669">07722166669</a><a href="tel:07506622144">07506622144</a></div></div>
-<div class="g" style="margin-top:18px">
-<a class="c gl k" href="mailto:demshq.co@gmail.com"><h3>البريد الإلكتروني</h3><p dir="ltr" style="text-align:right">demshq.co@gmail.com</p></a>
-<a class="c gl k" href="https://www.facebook.com/demshq.travel/" target="_blank" rel="noopener"><h3>فيسبوك</h3><p>شركة دمشق للسفر والسياحة</p></a>
-<a class="c gl k" href="https://www.instagram.com/demshq.travel/" target="_blank" rel="noopener"><h3>انستغرام</h3><p dir="ltr" style="text-align:right">@demshq.travel</p></a></div></div></section>
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
 
-<section style="padding-top:0"><div class="w"><div class="cta gl"><h2>جاهز تسافر؟</h2><p style="color:var(--mu);margin:0 0 18px">كلمنا وخلي فريقنا يرتب لك كل شي.</p><a class="btn b1" href="https://wa.me/9647701716661" target="_blank" rel="noopener">اتصل الآن</a></div></div></section>
-<footer>© شركة دمشق للسفر والسياحة – تكريت</footer>
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
 
-<div class="ov" id="ov" aria-hidden="true"><div class="md gl" role="dialog" aria-modal="true"><button class="x" id="x" aria-label="إغلاق">×</button><div class="ic"><svg viewBox="0 0 24 24" id="mi"></svg></div><h3 id="mt"></h3><p id="md"></p><a class="btn b1" id="mw" target="_blank" rel="noopener">تواصل عبر واتساب</a></div></div>
-<script>
-const I={plane:'<path d="M2 16l20-6-4-4-6 3-6-4-2 1 4 5-4 2z"/>',visa:'<rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M8 17h8"/>',bus:'<rect x="3" y="5" width="18" height="11" rx="2"/><circle cx="8" cy="19" r="1.5"/><circle cx="16" cy="19" r="1.5"/><path d="M3 11h18"/>',pin:'<path d="M12 21s7-6 7-12a7 7 0 10-14 0c0 6 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/>'};
-const ov=document.getElementById('ov');
-function openM(el){mt.textContent=el.dataset.t;md.textContent=el.dataset.d;mi.innerHTML=I[el.dataset.i]||I.pin;mw.href='https://wa.me/9647701716661?text='+encodeURIComponent('مرحباً، أريد الاستفسار عن: '+el.dataset.t);ov.classList.add('on');ov.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
-function closeM(){ov.classList.remove('on');ov.setAttribute('aria-hidden','true');document.body.style.overflow=''}
-document.querySelectorAll('[data-t]').forEach(e=>{e.addEventListener('click',()=>openM(e));e.addEventListener('keydown',v=>{if(v.key==='Enter'||v.key===' '){v.preventDefault();openM(e)}})});
-x.onclick=closeM;ov.addEventListener('click',e=>{if(e.target===ov)closeM()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeM()});
-</script></body></html>
+    .logo i {
+      font-size: 1.8rem;
+      color: var(--accent);
+    }
+
+    .contact-top-btn {
+      background: #25d366;
+      color: var(--white);
+      padding: 0.6rem 1.4rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    }
+
+    .contact-top-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, rgba(13, 92, 58, 0.9), rgba(15, 23, 42, 0.8)), 
+                  url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+      color: var(--white);
+      text-align: center;
+      padding: 6rem 2rem;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    .btn-main {
+      background: var(--accent);
+      color: var(--dark);
+      padding: 0.9rem 2.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-main:hover {
+      background: #ca8a04;
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    /* Content Layout */
+    .main-container {
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 2.5rem;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+      margin-bottom: 2rem;
+    }
+
+    .card-title {
+      font-size: 1.4rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 2px solid #f1f5f9;
+      padding-bottom: 0.8rem;
+    }
+
+    /* Info Items */
+    .info-list {
+      list-style: none;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 1.2rem;
+    }
+
+    .info-item i {
+      background: #eef2ff;
+      color: var(--primary);
+      padding: 12px;
+      border-radius: 12px;
+      font-size: 1.2rem;
+    }
+
+    .info-item div h4 {
+      font-size: 0.95rem;
+      color: var(--gray);
+    }
+
+    .info-item div p, .info-item div a {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--dark);
+      text-decoration: none;
+    }
+
+    /* Phone Grid */
+    .phones-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 1rem;
+    }
+
+    .phone-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 10px 15px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .phone-card:hover {
+      border-color: var(--primary);
+      background: var(--white);
+      color: var(--primary);
+    }
+
+    /* WhatsApp Float Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      background-color: #25d366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      z-index: 1000;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: var(--white);
+      text-align: center;
+      padding: 2rem;
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 768px) {
+      .main-container {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <i class="fa-solid => fa-plane-departure"></i>
+        <span>شركة دمشق للسفر والسياحة</span>
+      </div>
+      <a href="https://wa.me/9647701716661" target="_blank" class="contact-top-btn">
+        <i class="fa-brands fa-whatsapp"></i> اتصل الآن
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>وجهتك الأولى لعالم السفر والرحلات المميزة</h1>
+      <p>نقدم أفضل خيارات الطيران والحجوزات السياحية بأعلى مستويات الخدمة</p>
+      <a href="https://wa.me/9647701716661" target="_blank" class="btn-main">
+        <i class="fa-brands fa-whatsapp"></i> احجز رحلتك مباشرة عبر واتساب
+      </a>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <main class="main-container">
+    
+    <!-- Left Column: Quick Contact Info -->
+    <aside>
+      <div class="card">
+        <h3 class="card-title"><i class="fa-solid fa-location-dot"></i> عنوان الشركة</h3>
+        <div class="info-item">
+          <div>
+            <h4>الموقع</h4>
+            <p>تكريت - شارع 40 - مقابل عمارة الترنبول[cite: 1, 2]</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title"><i class="fa-solid fa-envelope"></i> البريد الإلكتروني</h3>
+        <div class="info-item">
+          <div>
+            <h4>راسلنا عبر</h4>
+            <a href="mailto:demshq.co@gmail.com">demshq.co@gmail.com[cite: 1]</a>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Right Column: Phone lines & Services -->
+    <section>
+      <div class="card">
+        <h3 class="card-title"><i class="fa-solid fa-phone-volume"></i> أرقام الهواتف للحجز والاستفسار[cite: 1]</h3>
+        <p style="color: var(--gray); margin-bottom: 1rem;">يمكنك الاتصال بفرعنا مباشرة عبر أي من الأرقام التالية:</p>
+        <div class="phones-grid">
+          <a href="tel:009647701716661" class="phone-card"><i class="fa-solid fa-phone"></i> 009647701716661</a>
+          <a href="tel:009647701716662" class="phone-card"><i class="fa-solid fa-phone"></i> 009647701716662</a>
+          <a href="tel:009647701716663" class="phone-card"><i class="fa-solid fa-phone"></i> 009647701716663</a>
+          <a href="tel:009647701716664" class="phone-card"><i class="fa-solid fa-phone"></i> 009647701716664</a>
+          <a href="tel:009647701716665" class="phone-card"><i class="fa-solid fa-phone"></i> 009647701716665</a>
+          <a href="tel:009647701716666" class="phone-card"><i class="fa-solid fa-phone"></i> 009647701716666[cite: 1]</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/9647701716661" target="_blank" class="whatsapp-float" title="تواصل معنا على واتساب">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Footer -->
+  <footer>
+    <p>جميع الحقوق محفوظة &copy; شركة دمشق للسفر والسياحة[cite: 1]</p>
+  </footer>
+
+</body>
+</html>
