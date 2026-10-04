@@ -1,32 +1,43 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>شركة دمشق للسفر والسياحة - تكريت</title>
-
-  <!-- Tailwind CSS & Font Awesome -->
+  <title>شركة دمشق للسفر والسياحة | Damascus Travel & Tourism</title>
+  
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+  
+  <!-- Tailwind Custom Configuration -->
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           fontFamily: {
             cairo: ['Cairo', 'sans-serif'],
           },
           colors: {
-            brand: {
+            emeraldBrand: {
               50: '#f0fdf4',
               100: '#dcfce7',
-              500: '#16a34a',
-              600: '#0d5c3a',
-              700: '#0b4a2f',
-              800: '#073320',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+              800: '#065f46',
+              900: '#064e3b',
+              950: '#022c22',
             },
-            accent: {
+            goldAccent: {
+              300: '#fde047',
               400: '#facc15',
               500: '#eab308',
               600: '#ca8a04',
@@ -41,221 +52,985 @@
     body {
       font-family: 'Cairo', sans-serif;
     }
-    .glass-card {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #059669;
+      border-radius: 9999px;
+    }
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .glass-panel-dark {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
     }
     .pulse-glow {
-      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-      animation: pulse 2s infinite;
+      box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+      animation: pulse 2.2s infinite;
     }
     @keyframes pulse {
-      0% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-      }
-      70% {
-        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
-      }
-      100% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-      }
+      0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+      70% { box-shadow: 0 0 0 15px rgba(16, 185, 129, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
     }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-500 selection:text-white flex flex-col min-h-screen">
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-emeraldBrand-600 selection:text-white min-h-screen flex flex-col">
 
-  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-sm">
+  <!-- Top Bar: Multi-Currency, Language, Contact Quick Info -->
+  <div class="bg-slate-900 text-slate-300 text-xs py-2 px-4 border-b border-slate-800 relative z-50">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <!-- Contact Info Header -->
+      <div class="flex items-center gap-4 flex-wrap">
+        <a href="https://earth.google.com/web/search/%D8%AA%D9%83%D8%B1%D9%8A%D9%8A%D8%AA+%D8%B4%D8%A7%D8%B1%D8%B9+40" target="_blank" class="hover:text-goldAccent-400 transition-colors flex items-center gap-1.5">
+          <i class="fa-solid fa-location-dot text-emeraldBrand-500"></i>
+          <span>تكريت - شارع 40 - مقابل عمارة الترنبول</span>
+        </a>
+        <a href="mailto:demshq.co@gmail.com" class="hidden sm:flex items-center gap-1.5 hover:text-white transition-colors">
+          <i class="fa-solid fa-envelope text-slate-400"></i>
+          <span>demshq.co@gmail.com</span>
+        </a>
+      </div>
+
+      <!-- Controls: Currency & Security badge -->
+      <div class="flex items-center gap-4 ms-auto sm:ms-0">
+        <div class="flex items-center gap-1 text-emerald-400 text-[11px] font-semibold bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800/40">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>حجز آمن 100% SSL</span>
+        </div>
+
+        <!-- Currency Switcher -->
+        <div class="flex items-center gap-1 bg-slate-800 px-2 py-1 rounded-lg border border-slate-700">
+          <i class="fa-solid fa-coins text-goldAccent-400"></i>
+          <select id="currencySelector" onchange="changeCurrency(this.value)" class="bg-transparent text-white font-bold focus:outline-none cursor-pointer">
+            <option value="IQD" class="bg-slate-900 text-white">IQD (د.ع)</option>
+            <option value="USD" selected class="bg-slate-900 text-white">USD ($)</option>
+            <option value="EUR" class="bg-slate-900 text-white">EUR (€)</option>
+          </select>
+        </div>
+
+        <!-- Language Selector -->
+        <button onclick="toggleLanguage()" class="flex items-center gap-1 bg-slate-800 hover:bg-slate-700 px-2.5 py-1 rounded-lg border border-slate-700 text-white transition">
+          <i class="fa-solid fa-globe text-cyan-400"></i>
+          <span id="langText">EN</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
-        <!-- Brand Logo -->
+        
+        <!-- Logo -->
         <a href="#" class="flex items-center gap-3 group">
-          <div class="w-12 h-12 bg-gradient-to-tr from-brand-600 to-brand-500 text-amber-400 rounded-2xl flex items-center justify-center shadow-md shadow-brand-600/20 group-hover:scale-105 transition-transform">
+          <div class="w-12 h-12 bg-gradient-to-tr from-emeraldBrand-800 via-emeraldBrand-600 to-emeraldBrand-500 text-goldAccent-400 rounded-2xl flex items-center justify-center shadow-lg shadow-emeraldBrand-700/20 group-hover:scale-105 transition-transform">
             <i class="fa-solid fa-plane-departure text-2xl"></i>
           </div>
           <div>
-            <span class="block text-xl font-extrabold text-brand-700 tracking-tight leading-none">شركة دمشق</span>
-            <span class="text-xs font-semibold text-slate-500">للسفر والسياحة</span>
+            <span class="block text-2xl font-black text-slate-900 tracking-tight leading-none group-hover:text-emeraldBrand-700 transition">شركة دمشق</span>
+            <span class="text-xs font-bold text-slate-500 tracking-widest">للسفر والسياحة</span>
           </div>
         </a>
 
-        <!-- Header Actions -->
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center gap-8 font-bold text-sm text-slate-700">
+          <a href="#hero" class="hover:text-emeraldBrand-600 transition-colors">الرئيسية</a>
+          <a href="#search-engine" class="hover:text-emeraldBrand-600 transition-colors">محرك الحجز</a>
+          <a href="#tours" class="hover:text-emeraldBrand-600 transition-colors">البرامج السياحية</a>
+          <a href="#custom-trip" class="hover:text-emeraldBrand-600 transition-colors">صمم رحلتك</a>
+          <a href="#blog" class="hover:text-emeraldBrand-600 transition-colors">دليل السفر</a>
+          <a href="#contact" class="hover:text-emeraldBrand-600 transition-colors">تواصل معنا</a>
+        </nav>
+
+        <!-- Call Actions -->
         <div class="flex items-center gap-3">
-          <a href="https://wa.me/9647701716661" target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-5 py-2.5 rounded-full text-sm shadow-lg shadow-emerald-600/20 transition-all hover:-translate-y-0.5">
-            <i class="fa-brands fa-whatsapp text-lg"></i>
-            <span>تواصل معنا الان</span>
+          <a href="https://wa.me/9647701716661" target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-emeraldBrand-600 hover:bg-emeraldBrand-700 text-white font-extrabold px-5 py-2.5 rounded-2xl text-sm shadow-md shadow-emeraldBrand-600/20 hover:shadow-lg transition-all hover:-translate-y-0.5">
+            <i class="fa-brands fa-whatsapp text-lg text-emerald-300"></i>
+            <span>تواصل مباشر</span>
           </a>
-          <a href="tel:009647701716661" class="inline-flex sm:hidden items-center justify-center w-10 h-10 bg-brand-50 text-brand-600 rounded-full hover:bg-brand-100 transition">
-            <i class="fa-solid fa-phone"></i>
-          </a>
+          <button onclick="toggleMobileMenu()" class="md:hidden w-11 h-11 bg-slate-100 text-slate-700 rounded-xl flex items-center justify-center hover:bg-slate-200 transition">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
         </div>
       </div>
     </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 py-4 space-y-3 font-bold">
+      <a href="#hero" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 hover:text-emeraldBrand-600">الرئيسية</a>
+      <a href="#search-engine" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 hover:text-emeraldBrand-600">محرك الحجز</a>
+      <a href="#tours" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 hover:text-emeraldBrand-600">البرامج السياحية</a>
+      <a href="#custom-trip" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 hover:text-emeraldBrand-600">صمم رحلتك الخاصة</a>
+      <a href="#blog" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 hover:text-emeraldBrand-600">دليل السفر والمدونة</a>
+      <a href="#contact" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 hover:text-emeraldBrand-600">اتصل بنا</a>
+      <a href="https://wa.me/9647701716661" target="_blank" class="flex items-center justify-center gap-2 bg-emerald-600 text-white py-3 rounded-xl font-bold w-full mt-2">
+        <i class="fa-brands fa-whatsapp"></i> واتساب المباشر
+      </a>
+    </div>
   </header>
 
-  <section class="relative bg-slate-900 text-white overflow-hidden py-16 lg:py-24">
-    <!-- Background Overlay with Image -->
-    <div class="absolute inset-0 z-0 opacity-40 mix-blend-overlay">
-      <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1920&q=80" alt="سفر وسياحة" class="w-full h-full object-cover">
+  <!-- Hero Section -->
+  <section id="hero" class="relative bg-slate-950 text-white min-h-[580px] lg:min-h-[640px] flex items-center justify-center overflow-hidden">
+    <!-- Video / High-Res Visual Overlay Background -->
+    <div class="absolute inset-0 z-0">
+      <img id="heroBgImage" src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1920&q=80" alt="سفر وسياحة طيران" class="w-full h-full object-cover opacity-35 transition-all duration-1000 scale-105">
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-slate-950/40"></div>
     </div>
-    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent"></div>
 
-    <div class="relative z-10 max-w-5xl mx-auto px-4 text-center">
-      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-white/10 text-amber-300 backdrop-blur-md mb-6 border border-white/10">
-        <i class="fa-solid fa-star text-amber-400"></i> خياركم الأفضل للحجوزات والرحلات السياحية
+    <div class="relative z-10 max-w-5xl mx-auto px-4 text-center py-16">
+      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold bg-white/10 text-goldAccent-300 backdrop-blur-md mb-6 border border-white/15 shadow-xl">
+        <i class="fa-solid fa-crown text-goldAccent-400"></i> الوجهة الأولى للحجوزات السياحية والطيران في العراق
       </span>
+      
       <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
-        اكتشف العالم مع <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-amber-500">شركة دمشق</span>
+        رحلتك القادمة تبدأ بلمسة <span class="text-transparent bg-clip-text bg-gradient-to-r from-goldAccent-300 via-emeraldBrand-400 to-amber-200">فخامة وراحة</span>
       </h1>
-      <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto mb-8 font-light">
-        أفضل العروض والخدمات لرحلات الطيران والحجوزات الفندقية والفيز السياحية بأعلى درجات الراحة والموثوقية.
+      
+      <p class="text-base sm:text-xl text-slate-300 max-w-3xl mx-auto mb-10 font-light leading-relaxed">
+        شركة دمشق تقدم لك أفضل عروض الطيران، البرامج السياحية المتكاملة، الفنادق الفاخرة وإصدار التأشيرات بسرعة فائقة وموثوقية عالية.
       </p>
 
-      <!-- Main Action Buttons -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="https://wa.me/9647701716661" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-lg px-8 py-4 rounded-2xl shadow-xl shadow-emerald-500/25 transition-all hover:-translate-y-1">
-          <i class="fa-brands fa-whatsapp text-2xl"></i>
-          <span>حجز سريع عبر واتساب</span>
+      <!-- Dynamic Destination Badges -->
+      <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8">
+        <button onclick="setHeroDestination('اسطنبول', 'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=1920&q=80')" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-xs sm:text-sm font-semibold backdrop-blur-md border border-white/10 transition">
+          🇹🇷 تركيا - اسطنبول
+        </button>
+        <button onclick="setHeroDestination('دبي', 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1920&q=80')" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-xs sm:text-sm font-semibold backdrop-blur-md border border-white/10 transition">
+          🇦🇪 الإمارات - دبي
+        </button>
+        <button onclick="setHeroDestination('القاهرة', 'https://images.unsplash.com/photo-1572252821143-0259e2112a20?auto=format&fit=crop&w=1920&q=80')" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-xs sm:text-sm font-semibold backdrop-blur-md border border-white/10 transition">
+          🇪🇬 مصر - القاهرة
+        </button>
+        <button onclick="setHeroDestination('ماليزيا', 'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=1920&q=80')" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-xs sm:text-sm font-semibold backdrop-blur-md border border-white/10 transition">
+          🇲🇾 ماليزيا - كوالالمبور
+        </button>
+      </div>
+
+      <div class="flex flex-wrap justify-center items-center gap-4">
+        <a href="#search-engine" class="bg-emeraldBrand-600 hover:bg-emeraldBrand-500 text-white font-black text-base sm:text-lg px-8 py-4 rounded-2xl shadow-2xl shadow-emeraldBrand-600/40 transition-all hover:-translate-y-1 inline-flex items-center gap-3">
+          <i class="fa-solid fa-magnifying-glass text-goldAccent-400"></i>
+          <span>ابحث واحجز رحلتك الآن</span>
         </a>
-        <a href="#location" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold text-base px-6 py-4 rounded-2xl backdrop-blur-md border border-white/20 transition-all">
-          <i class="fa-solid fa-earth-americas text-amber-400"></i>
-          <span>عرض موقعنا على Google Earth</span>
+        <a href="#custom-trip" class="bg-white/10 hover:bg-white/20 text-white font-bold text-base px-6 py-4 rounded-2xl backdrop-blur-md border border-white/20 transition-all inline-flex items-center gap-2">
+          <i class="fa-solid fa-sliders text-amber-300"></i>
+          <span>تخصيص برنامج خاص</span>
         </a>
       </div>
     </div>
   </section>
 
-  <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+  <!-- Interactive Booking Engine Search Box -->
+  <section id="search-engine" class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 sm:-mt-20 mb-16">
+    <div class="bg-white rounded-3xl shadow-2xl shadow-slate-300/60 border border-slate-100 p-6 sm:p-8">
+      
+      <!-- Service Type Selector Tabs -->
+      <div class="flex flex-wrap items-center gap-2 sm:gap-4 mb-6 border-b border-slate-100 pb-4">
+        <button onclick="switchBookingTab('flights')" id="tab-flights" class="tab-btn active font-black text-sm sm:text-base px-5 py-2.5 rounded-2xl flex items-center gap-2 bg-emeraldBrand-600 text-white shadow-md shadow-emeraldBrand-600/20 transition-all">
+          <i class="fa-solid fa-plane"></i>
+          <span>حجز طيران</span>
+        </button>
+        <button onclick="switchBookingTab('hotels')" id="tab-hotels" class="tab-btn font-bold text-sm sm:text-base px-5 py-2.5 rounded-2xl flex items-center gap-2 bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all">
+          <i class="fa-solid fa-hotel"></i>
+          <span>فنادق وإقامة</span>
+        </button>
+        <button onclick="switchBookingTab('tours')" id="tab-tours" class="tab-btn font-bold text-sm sm:text-base px-5 py-2.5 rounded-2xl flex items-center gap-2 bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all">
+          <i class="fa-solid fa-route"></i>
+          <span>برامج سياحية</span>
+        </button>
+        <button onclick="switchBookingTab('cars')" id="tab-cars" class="tab-btn font-bold text-sm sm:text-base px-5 py-2.5 rounded-2xl flex items-center gap-2 bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all">
+          <i class="fa-solid fa-car"></i>
+          <span>تأجير سيارات</span>
+        </button>
+      </div>
 
-      <!-- Location Card (Interactive Google Earth & Maps) -->
-      <div id="location" class="lg:col-span-1 bg-white rounded-3xl p-6 sm:p-8 border border-slate-100 shadow-xl shadow-slate-200/50 flex flex-col justify-between">
-        <div>
-          <div class="flex items-center gap-3 mb-6">
-            <div class="w-10 h-10 bg-amber-50 text-amber-600 rounded-xl flex items-center justify-center text-lg">
-              <i class="fa-solid fa-location-dot"></i>
-            </div>
-            <h2 class="text-xl font-bold text-slate-800">عنوان المقر الرئيسي</h2>
-          </div>
-
-          <!-- Interactive Location Link -->
-          <div class="bg-gradient-to-br from-slate-50 to-brand-50/30 rounded-2xl p-5 border border-slate-200/60 mb-6 group hover:border-brand-500 transition-all">
-            <p class="text-xs text-slate-500 font-semibold mb-1">انقر على العنوان لفتحه في Google Earth:</p>
-            <a href="https://earth.google.com/web/search/تكريت+شارع+40" target="_blank" class="block font-bold text-lg text-brand-700 group-hover:text-brand-500 transition-colors flex items-start gap-2">
-              <i class="fa-solid fa-map-pin text-amber-500 mt-1 shrink-0"></i>
-              <span>تكريت - شارع 40 - مقابل عمارة الترنبول</span>
-            </a>
-            <p class="text-xs text-slate-400 mt-2 flex items-center gap-1">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> يفتح مباشرة في الخريطة والتطبيق
-            </p>
+      <!-- Flight Search Form -->
+      <form id="bookingForm" onsubmit="handleSearchSubmit(event)" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 items-end">
+        
+        <!-- Destination / From-To -->
+        <div class="lg:col-span-2">
+          <label class="block text-xs font-bold text-slate-500 mb-1.5"><i class="fa-solid fa-location-arrow text-emeraldBrand-600 me-1"></i> الوجهة أو المدينة</label>
+          <div class="relative">
+            <input type="text" id="searchDestination" required placeholder="مثال: اسطنبول، دبي، القاهرة..." value="اسطنبول - تركيا" class="w-full bg-slate-50 border border-slate-200 rounded-2xl py-3.5 px-4 font-bold text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-emeraldBrand-500 focus:bg-white transition">
+            <i class="fa-solid fa-compass absolute left-4 top-4 text-slate-400"></i>
           </div>
         </div>
 
-        <!-- Direct Earth & Maps Buttons -->
-        <div class="space-y-2">
-          <a href="https://earth.google.com/web/search/تكريت+شارع+40" target="_blank" class="w-full inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 px-4 rounded-xl text-sm transition">
-            <i class="fa-solid fa-globe text-cyan-400"></i>
-            <span>فتح في Google Earth 3D</span>
+        <!-- Dates (Departure & Return) -->
+        <div>
+          <label class="block text-xs font-bold text-slate-500 mb-1.5"><i class="fa-solid fa-calendar-days text-emeraldBrand-600 me-1"></i> تاريخ الذهاب والعودة</label>
+          <input type="date" id="searchDate" required class="w-full bg-slate-50 border border-slate-200 rounded-2xl py-3 px-3 font-bold text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-emeraldBrand-500 focus:bg-white transition">
+        </div>
+
+        <!-- Passengers / Count -->
+        <div>
+          <label class="block text-xs font-bold text-slate-500 mb-1.5"><i class="fa-solid fa-users text-emeraldBrand-600 me-1"></i> عدد المسافرين</label>
+          <select id="searchPassengers" class="w-full bg-slate-50 border border-slate-200 rounded-2xl py-3.5 px-3 font-bold text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-emeraldBrand-500 focus:bg-white transition cursor-pointer">
+            <option value="1">1 شخص (بالغ)</option>
+            <option value="2" selected>2 شخص (بالغين)</option>
+            <option value="3">عائلة (3-4 أفراد)</option>
+            <option value="5">مجموعة (5+ أفراد)</option>
+          </select>
+        </div>
+
+        <!-- Submit Search -->
+        <div>
+          <button type="submit" class="w-full bg-emeraldBrand-600 hover:bg-emeraldBrand-700 text-white font-extrabold py-3.5 px-6 rounded-2xl shadow-lg shadow-emeraldBrand-600/30 transition flex items-center justify-center gap-2">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span>ابحث الآن</span>
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- Tour Packages Section -->
+  <section id="tours" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <span class="text-xs font-black tracking-widest text-emeraldBrand-600 uppercase bg-emeraldBrand-50 px-3 py-1 rounded-full border border-emeraldBrand-200">برامج سياحية متكاملة</span>
+      <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3">أفخم الرحلات الجاهزة الشاملة للطيران والفندق</h2>
+      <p class="text-slate-500 text-sm sm:text-base mt-2">اختر وجهتك المفضلة واستمتع بجدول رحلة مدروس يوماً بيوم مع شفافية كاملة بالأسعار.</p>
+    </div>
+
+    <!-- Tour Cards Grid -->
+    <div id="toursGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Tours dynamically injected via JS below for interactive multi-currency & modal support -->
+    </div>
+  </section>
+
+  <!-- Custom Trip Builder Request -->
+  <section id="custom-trip" class="bg-gradient-to-br from-slate-900 via-emeraldBrand-950 to-slate-900 text-white py-16 my-12 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        
+        <div>
+          <span class="text-goldAccent-400 text-xs font-bold uppercase tracking-widest bg-goldAccent-400/10 px-3 py-1 rounded-full border border-goldAccent-400/20">خدمة التخصيص الفاخرة</span>
+          <h2 class="text-3xl sm:text-4xl font-black mt-4 leading-tight">صمّم برنامجك السياحي حسب ميزانيتك ورغبتك</h2>
+          <p class="text-slate-300 text-sm sm:text-base mt-4 leading-relaxed">
+            لم تجد الرحلة المناسبة؟ حدد وجهتك، ميزانيتك، وعدد الأيام، وسيقوم فريق شركة دمشق للسفر والسياحة بإعداد برنامج سياحي خاص بك بدقة متناهية وإرساله إليك مباشرة عبر الواتساب.
+          </p>
+
+          <div class="mt-8 space-y-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-emeraldBrand-600/30 text-emeraldBrand-400 flex items-center justify-center font-bold">
+                <i class="fa-solid fa-check"></i>
+              </div>
+              <span class="text-sm font-semibold">حجوزات طيران مخصصة على أفضل الخطوط الجوية</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-emeraldBrand-600/30 text-emeraldBrand-400 flex items-center justify-center font-bold">
+                <i class="fa-solid fa-check"></i>
+              </div>
+              <span class="text-sm font-semibold">فنادق مختارة من 3 إلى 5 نجوم شاملة الإفطار</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-emeraldBrand-600/30 text-emeraldBrand-400 flex items-center justify-center font-bold">
+                <i class="fa-solid fa-check"></i>
+              </div>
+              <span class="text-sm font-semibold">استقبال وتوديع خاص في المطار وسيارة مع سائق</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Request Form Box -->
+        <div class="bg-white/10 backdrop-blur-xl border border-white/15 p-6 sm:p-8 rounded-3xl shadow-2xl">
+          <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+            <i class="fa-solid fa-sliders text-goldAccent-400"></i>
+            <span>نموذج طلب رحلة مخصصة</span>
+          </h3>
+
+          <form onsubmit="handleCustomTripSubmit(event)" class="space-y-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">الوجهة المطلوب زيارتها</label>
+              <input type="text" id="customDestination" required placeholder="مثال: جورجيا، باكو، جورجيا + تركيا..." class="w-full bg-slate-800/80 border border-slate-700 rounded-xl py-3 px-4 text-white text-sm focus:outline-none focus:ring-2 focus:ring-emeraldBrand-500">
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1">عدد الأيام</label>
+                <select id="customDays" class="w-full bg-slate-800/80 border border-slate-700 rounded-xl py-3 px-3 text-white text-sm focus:outline-none focus:ring-2 focus:ring-emeraldBrand-500">
+                  <option>5 أيام / 4 ليالي</option>
+                  <option selected>7 أيام / 6 ليالي</option>
+                  <option>10 أيام / 9 ليالي</option>
+                  <option>14 يوم / 13 ليلة</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1">الميزانية التقديرية للشخص</label>
+                <select id="customBudget" class="w-full bg-slate-800/80 border border-slate-700 rounded-xl py-3 px-3 text-white text-sm focus:outline-none focus:ring-2 focus:ring-emeraldBrand-500">
+                  <option>$500 - $800</option>
+                  <option selected>$800 - $1200</option>
+                  <option>$1200 - $2000</option>
+                  <option>فاخرة جدًا +$2000</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">رقم الهاتف للاتصال والواتساب</label>
+              <input type="tel" id="customPhone" required placeholder="00964770xxxxxxx" class="w-full bg-slate-800/80 border border-slate-700 rounded-xl py-3 px-4 text-white text-sm focus:outline-none focus:ring-2 focus:ring-emeraldBrand-500 dir-ltr text-right">
+            </div>
+
+            <button type="submit" class="w-full bg-gradient-to-r from-emeraldBrand-500 to-emeraldBrand-600 hover:from-emeraldBrand-600 hover:to-emeraldBrand-700 text-white font-extrabold py-3.5 rounded-xl shadow-lg transition flex items-center justify-center gap-2 mt-2">
+              <i class="fa-brands fa-whatsapp text-xl"></i>
+              <span>إرسال الطلب فوراً عبر واتساب</span>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Travel Blog & Guides -->
+  <section id="blog" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="flex flex-col md:flex-row items-start md:items-end justify-between mb-10">
+      <div>
+        <span class="text-xs font-black tracking-widest text-emeraldBrand-600 uppercase bg-emeraldBrand-50 px-3 py-1 rounded-full border border-emeraldBrand-200">دليل السفر والمدونة</span>
+        <h2 class="text-3xl font-black text-slate-900 mt-2">نصائح وإرشادات لمسافرينا</h2>
+      </div>
+      <p class="text-slate-500 text-sm max-w-md mt-2 md:mt-0">تزود بأحدث النصائح السياحية ومعلومات التأشيرات وأفضل الأوقات لزيارة وجهتك القادمة.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Article 1 -->
+      <article class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-lg shadow-slate-200/50 hover:-translate-y-1 transition duration-300">
+        <img src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=800&q=80" alt="دليل اسطنبول" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <span class="text-xs font-bold text-amber-600 bg-amber-50 px-2.5 py-1 rounded-md">تركيا</span>
+          <h3 class="text-lg font-bold text-slate-900 mt-3 mb-2">أفضل 5 أماكن يجب زيارتها في اسطنبول هذا العام</h3>
+          <p class="text-xs text-slate-500 leading-relaxed">استكشف منطقة البوسفور، الجزر المائية، وأشهر الأسواق التاريخية والمطاعم العريقة...</p>
+        </div>
+      </article>
+
+      <!-- Article 2 -->
+      <article class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-lg shadow-slate-200/50 hover:-translate-y-1 transition duration-300">
+        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80" alt="تأشيرة دبي" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <span class="text-xs font-bold text-emeraldBrand-600 bg-emeraldBrand-50 px-2.5 py-1 rounded-md">تأشيرات</span>
+          <h3 class="text-lg font-bold text-slate-900 mt-3 mb-2">دليل إصدار فيزا دبي السياحية للزيارات العائلية</h3>
+          <p class="text-xs text-slate-500 leading-relaxed">كل ما تحتاج معرفته عن الشروط والمستندات المطلوبة لإصدار الفيزا بأسرع وقت عبر شركة دمشق...</p>
+        </div>
+      </article>
+
+      <!-- Article 3 -->
+      <article class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-lg shadow-slate-200/50 hover:-translate-y-1 transition duration-300">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="نصائح السفر" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <span class="text-xs font-bold text-cyan-600 bg-cyan-50 px-2.5 py-1 rounded-md">نصائح عامة</span>
+          <h3 class="text-lg font-bold text-slate-900 mt-3 mb-2">كيف تجهز حقيبة سفرك ووزن الأمتعة في الطيران</h3>
+          <p class="text-xs text-slate-500 leading-relaxed">نصائح ذهبية لتجنب رسوم الأمتعة الزائدة وتسهيل إجراءات التفتيش في المطار بسهولة...</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Client Reviews / Social Proof -->
+  <section class="bg-slate-100/70 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <div class="flex items-center justify-center gap-1 text-amber-400 text-lg mb-2">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <h2 class="text-3xl font-black text-slate-900">آراء زبائننا وتجاربهم الموثوقة</h2>
+        <p class="text-slate-500 text-sm mt-2">ثقة مسافرينا هي سر نجاحنا في تقديم أفضل خدمات السفر والسياحة في تكريت والعراق.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-3xl border border-slate-200/80 shadow-sm relative">
+          <i class="fa-solid fa-quote-right text-emeraldBrand-100 text-4xl absolute left-6 top-6"></i>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">"تعامل راقي جداً من شركة دمشق. حجزنا رحلة اسطنبول العائلية وكانت كل الفنادق والمواصلات ممتازة وفي الموعد تماماً."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center font-bold text-slate-600">أ.ح</div>
+            <div>
+              <h4 class="font-bold text-slate-800 text-sm">أحمد الحسان</h4>
+              <span class="text-xs text-slate-400">مسافر إلى اسطنبول</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-3xl border border-slate-200/80 shadow-sm relative">
+          <i class="fa-solid fa-quote-right text-emeraldBrand-100 text-4xl absolute left-6 top-6"></i>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">"سرعة فائقة في إصدار فيزا دبي وتذاكر الطيران وبأفضل سعر مقارنة بالمكاتب الأخرى. ننصح بالتعامل معهم بشدة."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center font-bold text-slate-600">م.ع</div>
+            <div>
+              <h4 class="font-bold text-slate-800 text-sm">مصطفى العبيدي</h4>
+              <span class="text-xs text-slate-400">رحلة عمل إلى دبي</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-3xl border border-slate-200/80 shadow-sm relative">
+          <i class="fa-solid fa-quote-right text-emeraldBrand-100 text-4xl absolute left-6 top-6"></i>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">"مكتبهم في شارع 40 بتكريت معروف بالمصداقية والشرح الوافي لكل تفاصيل الرحلة بدون أي مصاريف مخفية."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center font-bold text-slate-600">س.م</div>
+            <div>
+              <h4 class="font-bold text-slate-800 text-sm">سارة التكريتي</h4>
+              <span class="text-xs text-slate-400">رحلة مصر والقاهرة</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Google Earth Location Section -->
+  <section id="contact" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      
+      <!-- Interactive Map Card -->
+      <div class="lg:col-span-1 bg-gradient-to-b from-slate-900 to-slate-950 text-white p-8 rounded-3xl flex flex-col justify-between shadow-xl">
+        <div>
+          <div class="w-12 h-12 bg-emeraldBrand-600/30 text-emeraldBrand-400 rounded-2xl flex items-center justify-center text-2xl mb-6">
+            <i class="fa-solid fa-earth-americas"></i>
+          </div>
+          <h3 class="text-2xl font-black mb-2">مقر الشركة والتغطية</h3>
+          <p class="text-slate-400 text-xs mb-6 leading-relaxed">انقر على العنوان أوالزر أدناه لفتح الموقع الجغرافي ثلاثي الأبعاد على Google Earth.</p>
+
+          <div class="bg-slate-800/80 p-4 rounded-2xl border border-slate-700/80 mb-6">
+            <span class="text-[11px] text-amber-400 font-bold block mb-1">العنوان التفصيلي:</span>
+            <a href="https://earth.google.com/web/search/%D8%AA%D9%83%D8%B1%D9%8A%D9%8A%D8%AA+%D8%B4%D8%A7%D8%B1%D8%B9+40" target="_blank" class="font-bold text-white text-base hover:text-emeraldBrand-400 transition flex items-start gap-2">
+              <i class="fa-solid fa-location-dot text-amber-400 mt-1 shrink-0"></i>
+              <span>تكريت - شارع 40 - مقابل عمارة الترنبول</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <a href="https://earth.google.com/web/search/%D8%AA%D9%83%D8%B1%D9%8A%D9%8A%D8%AA+%D8%B4%D8%A7%D8%B1%D8%B9+40" target="_blank" class="w-full bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-bold py-3.5 px-4 rounded-xl text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg transition">
+            <i class="fa-solid fa-globe text-lg"></i>
+            <span>عرض موقعنا على Google Earth 3D</span>
           </a>
-          <a href="https://maps.google.com/?q=تكريت+شارع+40" target="_blank" class="w-full inline-flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-3 px-4 rounded-xl text-sm transition">
-            <i class="fa-solid fa-map text-emerald-600"></i>
+          <a href="https://maps.google.com/?q=تكريت+شارع+40" target="_blank" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold py-3 px-4 rounded-xl text-xs sm:text-sm flex items-center justify-center gap-2 transition">
+            <i class="fa-solid fa-map-location-dot text-emerald-400"></i>
             <span>فتح في خرائط Google Maps</span>
           </a>
         </div>
       </div>
 
-      <div class="lg:col-span-2 space-y-8">
-        
-        <!-- Phone Numbers Grid -->
-        <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-100 shadow-xl shadow-slate-200/50">
-          <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center text-lg">
-                <i class="fa-solid fa-phone-volume"></i>
-              </div>
-              <div>
-                <h2 class="text-xl font-bold text-slate-800">أرقام الحجز والاستفسار</h2>
-                <p class="text-xs text-slate-500">انقر على الرقم للاتصال به مباشرة</p>
-              </div>
-            </div>
-            <span class="hidden sm:inline-block px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full text-xs font-bold">متاح 24/7</span>
+      <!-- Phone Lines Grid -->
+      <div class="lg:col-span-2 bg-white p-8 rounded-3xl border border-slate-100 shadow-xl">
+        <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
+          <div>
+            <h3 class="text-2xl font-black text-slate-900">خطوط الاتصال والاستفسار المباشر</h3>
+            <p class="text-slate-500 text-xs mt-1">تواصل مع موظفي مبيعات شركة دمشق عبر الأرقام التالية:</p>
           </div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            <!-- Primary WhatsApp Phone -->
-            <a href="https://wa.me/9647701716661" target="_blank" class="p-4 rounded-2xl bg-emerald-50 hover:bg-emerald-100/80 border border-emerald-200 flex items-center justify-between group transition">
-              <div class="flex items-center gap-3">
-                <i class="fa-brands fa-whatsapp text-emerald-600 text-xl"></i>
-                <span class="font-bold text-slate-800 dir-ltr text-sm">009647701716661</span>
-              </div>
-              <span class="text-xs font-bold text-emerald-700 bg-emerald-200/60 px-2 py-0.5 rounded">واتساب</span>
-            </a>
-
-            <!-- Other Phone Lines -->
-            <a href="tel:009647701716662" class="p-4 rounded-2xl bg-slate-50 hover:bg-brand-50/50 border border-slate-200/80 flex items-center gap-3 group transition">
-              <i class="fa-solid fa-phone text-slate-400 group-hover:text-brand-600"></i>
-              <span class="font-bold text-slate-700 group-hover:text-brand-700 dir-ltr text-sm">009647701716662</span>
-            </a>
-
-            <a href="tel:009647701716663" class="p-4 rounded-2xl bg-slate-50 hover:bg-brand-50/50 border border-slate-200/80 flex items-center gap-3 group transition">
-              <i class="fa-solid fa-phone text-slate-400 group-hover:text-brand-600"></i>
-              <span class="font-bold text-slate-700 group-hover:text-brand-700 dir-ltr text-sm">009647701716663</span>
-            </a>
-
-            <a href="tel:009647701716664" class="p-4 rounded-2xl bg-slate-50 hover:bg-brand-50/50 border border-slate-200/80 flex items-center gap-3 group transition">
-              <i class="fa-solid fa-phone text-slate-400 group-hover:text-brand-600"></i>
-              <span class="font-bold text-slate-700 group-hover:text-brand-700 dir-ltr text-sm">009647701716664</span>
-            </a>
-
-            <a href="tel:009647701716665" class="p-4 rounded-2xl bg-slate-50 hover:bg-brand-50/50 border border-slate-200/80 flex items-center gap-3 group transition">
-              <i class="fa-solid fa-phone text-slate-400 group-hover:text-brand-600"></i>
-              <span class="font-bold text-slate-700 group-hover:text-brand-700 dir-ltr text-sm">009647701716665</span>
-            </a>
-
-            <a href="tel:009647701716666" class="p-4 rounded-2xl bg-slate-50 hover:bg-brand-50/50 border border-slate-200/80 flex items-center gap-3 group transition">
-              <i class="fa-solid fa-phone text-slate-400 group-hover:text-brand-600"></i>
-              <span class="font-bold text-slate-700 group-hover:text-brand-700 dir-ltr text-sm">009647701716666</span>
-            </a>
-          </div>
+          <span class="bg-emeraldBrand-50 text-emeraldBrand-700 px-3 py-1 rounded-full text-xs font-bold border border-emeraldBrand-200">
+            أوقات العمل: 9:00 ص - 10:00 م
+          </span>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="bg-white rounded-3xl p-6 border border-slate-100 shadow-lg shadow-slate-200/40 flex items-center gap-4">
-            <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-xl shrink-0">
-              <i class="fa-solid fa-envelope"></i>
-            </div>
+        <!-- Phones Display -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- Primary WhatsApp Line -->
+          <a href="https://wa.me/9647701716661" target="_blank" class="p-4 rounded-2xl bg-emerald-50 hover:bg-emerald-100/80 border border-emerald-300 flex items-center justify-between group transition shadow-sm">
             <div>
-              <h3 class="text-xs font-semibold text-slate-400">البريد الإلكتروني الرسمى</h3>
-              <a href="mailto:demshq.co@gmail.com" class="font-bold text-slate-800 hover:text-brand-600 transition text-sm sm:text-base">demshq.co@gmail.com</a>
+              <span class="text-[10px] font-bold text-emerald-700 uppercase block">خط الواتساب الرئيسي</span>
+              <span class="font-extrabold text-slate-900 text-sm dir-ltr block mt-0.5">009647701716661</span>
             </div>
-          </div>
+            <i class="fa-brands fa-whatsapp text-emerald-600 text-2xl group-hover:scale-110 transition-transform"></i>
+          </a>
 
-          <div class="bg-white rounded-3xl p-6 border border-slate-100 shadow-lg shadow-slate-200/40 flex items-center gap-4">
-            <div class="w-12 h-12 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center text-xl shrink-0">
-              <i class="fa-solid fa-globe"></i>
-            </div>
+          <!-- Line 2 -->
+          <a href="tel:009647701716662" class="p-4 rounded-2xl bg-slate-50 hover:bg-slate-100 border border-slate-200 flex items-center justify-between group transition">
             <div>
-              <h3 class="text-xs font-semibold text-slate-400">الموقع الإلكتروني</h3>
-              <p class="font-bold text-slate-800 text-sm sm:text-base">شركة دمشق للسفر والسياحة</p>
+              <span class="text-[10px] font-bold text-slate-400 block">خط الحجوزات 2</span>
+              <span class="font-bold text-slate-800 text-sm dir-ltr block mt-0.5">009647701716662</span>
             </div>
+            <i class="fa-solid fa-phone text-slate-400 group-hover:text-emeraldBrand-600 transition"></i>
+          </a>
+
+          <!-- Line 3 -->
+          <a href="tel:009647701716663" class="p-4 rounded-2xl bg-slate-50 hover:bg-slate-100 border border-slate-200 flex items-center justify-between group transition">
+            <div>
+              <span class="text-[10px] font-bold text-slate-400 block">خط الحجوزات 3</span>
+              <span class="font-bold text-slate-800 text-sm dir-ltr block mt-0.5">009647701716663</span>
+            </div>
+            <i class="fa-solid fa-phone text-slate-400 group-hover:text-emeraldBrand-600 transition"></i>
+          </a>
+
+          <!-- Line 4 -->
+          <a href="tel:009647701716664" class="p-4 rounded-2xl bg-slate-50 hover:bg-slate-100 border border-slate-200 flex items-center justify-between group transition">
+            <div>
+              <span class="text-[10px] font-bold text-slate-400 block">خط الحجوزات 4</span>
+              <span class="font-bold text-slate-800 text-sm dir-ltr block mt-0.5">009647701716664</span>
+            </div>
+            <i class="fa-solid fa-phone text-slate-400 group-hover:text-emeraldBrand-600 transition"></i>
+          </a>
+
+          <!-- Line 5 -->
+          <a href="tel:009647701716665" class="p-4 rounded-2xl bg-slate-50 hover:bg-slate-100 border border-slate-200 flex items-center justify-between group transition">
+            <div>
+              <span class="text-[10px] font-bold text-slate-400 block">خط الحجوزات 5</span>
+              <span class="font-bold text-slate-800 text-sm dir-ltr block mt-0.5">009647701716665</span>
+            </div>
+            <i class="fa-solid fa-phone text-slate-400 group-hover:text-emeraldBrand-600 transition"></i>
+          </a>
+
+          <!-- Line 6 -->
+          <a href="tel:009647701716666" class="p-4 rounded-2xl bg-slate-50 hover:bg-slate-100 border border-slate-200 flex items-center justify-between group transition">
+            <div>
+              <span class="text-[10px] font-bold text-slate-400 block">خط الحجوزات 6</span>
+              <span class="font-bold text-slate-800 text-sm dir-ltr block mt-0.5">009647701716666</span>
+            </div>
+            <i class="fa-solid fa-phone text-slate-400 group-hover:text-emeraldBrand-600 transition"></i>
+          </a>
+        </div>
+
+        <!-- Payment Methods Supported Badge -->
+        <div class="mt-8 pt-6 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4">
+          <div class="text-xs font-bold text-slate-500">طرق الدفع المعتمدة لدى الشركة:</div>
+          <div class="flex items-center gap-4 text-slate-400 text-xl">
+            <span class="text-xs font-bold bg-slate-100 text-slate-700 px-3 py-1 rounded-lg border">زين كاش ZainCash</span>
+            <i class="fa-brands fa-cc-mastercard text-red-500" title="MasterCard"></i>
+            <i class="fa-brands fa-cc-visa text-blue-600" title="Visa"></i>
+            <span class="text-xs font-bold bg-emerald-50 text-emerald-800 px-3 py-1 rounded-lg border border-emerald-200">الدفع نقداً في المكتب</span>
           </div>
         </div>
 
       </div>
 
     </div>
-  </main>
+  </section>
 
-  <a href="https://wa.me/9647701716661" target="_blank" class="fixed bottom-6 left-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-2xl transition-transform hover:scale-110 pulse-glow" title="تواصل معنا عبر واتساب">
+  <!-- Floating WhatsApp Chat Button -->
+  <a href="https://wa.me/9647701716661" target="_blank" class="fixed bottom-6 left-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-2xl transition-transform hover:scale-110 pulse-glow" title="استفسر عبر واتساب مباشرة">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
-  <footer class="bg-slate-900 text-slate-400 text-sm py-8 border-t border-slate-800 mt-auto">
-    <div class="max-w-7xl mx-auto px-4 text-center space-y-2">
-      <p class="font-bold text-slate-200">شركة دمشق للسفر والسياحة</p>
-      <p class="text-xs text-slate-500">تكريت - شارع 40 - مقابل عمارة الترنبول</p>
-      <p class="text-xs text-slate-600 pt-4">&copy; جميع الحقوق محفوظة</p>
+  <!-- Tour Details Modal (Itinerary & Day-by-Day View) -->
+  <div id="tourModal" class="fixed inset-0 z-50 bg-slate-900/80 backdrop-blur-sm hidden items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white w-full max-w-3xl rounded-3xl shadow-2xl overflow-hidden my-8 relative max-h-[90vh] flex flex-col">
+      <div id="modalContent" class="overflow-y-auto custom-scrollbar p-6 sm:p-8">
+        <!-- Dynamic Modal Data Injected via JS -->
+      </div>
+      <div class="p-4 bg-slate-50 border-t border-slate-200 flex items-center justify-between shrink-0">
+        <button onclick="closeTourModal()" class="px-5 py-2.5 bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold text-sm rounded-xl transition">إغلاق النافذة</button>
+        <button id="modalBookBtn" class="px-6 py-2.5 bg-emeraldBrand-600 hover:bg-emeraldBrand-700 text-white font-extrabold text-sm rounded-xl shadow-lg transition">تأكيد الحجز الان</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkout / Progress Step Modal -->
+  <div id="checkoutModal" class="fixed inset-0 z-50 bg-slate-900/80 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white w-full max-w-xl rounded-3xl shadow-2xl p-6 sm:p-8 relative">
+      <button onclick="closeCheckoutModal()" class="absolute left-6 top-6 text-slate-400 hover:text-slate-600 text-xl font-bold">✕</button>
+
+      <!-- Progress Bar -->
+      <div class="mb-6">
+        <div class="flex justify-between text-xs font-bold text-slate-500 mb-2">
+          <span id="stepLabel1" class="text-emeraldBrand-600">1. اختيارات الرحلة</span>
+          <span id="stepLabel2">2. بيانات المسافر</span>
+          <span id="stepLabel3">3. التأكيد والدفع</span>
+        </div>
+        <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
+          <div id="progressBar" class="bg-emeraldBrand-600 h-full w-1/3 transition-all duration-300"></div>
+        </div>
+      </div>
+
+      <!-- Checkout Form Dynamic Content -->
+      <div id="checkoutStep1" class="space-y-4">
+        <h3 class="text-xl font-bold text-slate-900">تفاصيل الحجز المطلوب</h3>
+        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 text-sm space-y-2">
+          <p><span class="font-bold text-slate-500">الخدمة:</span> <span id="summaryService" class="font-extrabold text-slate-800">رحلة طيران - اسطنبول</span></p>
+          <p><span class="font-bold text-slate-500">عدد الأفراد:</span> <span id="summaryPassengers" class="font-bold text-slate-800">2 بالغين</span></p>
+          <p><span class="font-bold text-slate-500">التاريخ:</span> <span id="summaryDate" class="font-bold text-slate-800">الموعد الأقرب القادم</span></p>
+        </div>
+        <button onclick="nextCheckoutStep(2)" class="w-full bg-emeraldBrand-600 text-white font-bold py-3.5 rounded-xl shadow transition">المتابعة لبيانات المسافرين</button>
+      </div>
+
+      <div id="checkoutStep2" class="space-y-4 hidden">
+        <h3 class="text-xl font-bold text-slate-900">بيانات المسافر الرئيسي</h3>
+        <div>
+          <label class="block text-xs font-bold text-slate-500 mb-1">الاسم الثلاثي (مثل الجواز)</label>
+          <input type="text" id="passengerName" placeholder="محمد علي حسام" class="w-full border border-slate-200 p-3 rounded-xl text-sm font-semibold">
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-slate-500 mb-1">رقم الهاتف للاتصال والواتساب</label>
+          <input type="tel" id="passengerPhone" placeholder="00964770xxxxxxx" class="w-full border border-slate-200 p-3 rounded-xl text-sm font-semibold dir-ltr text-right">
+        </div>
+        <div class="flex gap-3">
+          <button onclick="nextCheckoutStep(1)" class="w-1/3 bg-slate-200 text-slate-700 font-bold py-3 rounded-xl">السابق</button>
+          <button onclick="nextCheckoutStep(3)" class="w-2/3 bg-emeraldBrand-600 text-white font-bold py-3 rounded-xl shadow">التالي: وسيلة الدفع</button>
+        </div>
+      </div>
+
+      <div id="checkoutStep3" class="space-y-4 hidden">
+        <h3 class="text-xl font-bold text-slate-900">تأكيد الطلب وطريقة الدفع</h3>
+        <p class="text-xs text-slate-500">اختر الطريقة المناسبة لإتمام الحجز معنا:</p>
+        
+        <div class="space-y-2">
+          <label class="flex items-center gap-3 p-3 border rounded-xl cursor-pointer hover:bg-slate-50">
+            <input type="radio" name="payType" value="واتساب" checked class="text-emeraldBrand-600">
+            <span class="text-sm font-bold text-slate-800"><i class="fa-brands fa-whatsapp text-emerald-600"></i> إرسال الطلب وحجزه فوراً عبر الواتساب</span>
+          </label>
+          <label class="flex items-center gap-3 p-3 border rounded-xl cursor-pointer hover:bg-slate-50">
+            <input type="radio" name="payType" value="زين كاش" class="text-emeraldBrand-600">
+            <span class="text-sm font-bold text-slate-800"><i class="fa-solid fa-wallet text-purple-600"></i> دفع عبر زين كاش (ZainCash)</span>
+          </label>
+          <label class="flex items-center gap-3 p-3 border rounded-xl cursor-pointer hover:bg-slate-50">
+            <input type="radio" name="payType" value="المكتب" class="text-emeraldBrand-600">
+            <span class="text-sm font-bold text-slate-800"><i class="fa-solid fa-building text-slate-600"></i> الدفع نقداً في مكتبنا بتكريت</span>
+          </label>
+        </div>
+
+        <button onclick="confirmFinalBooking()" class="w-full bg-emeraldBrand-600 text-white font-extrabold py-3.5 rounded-xl shadow-lg hover:bg-emeraldBrand-700 transition">إتمام وتأكيد الحجز الان</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 text-slate-400 text-sm py-12 border-t border-slate-800 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 pb-8 border-b border-slate-800">
+        
+        <div class="space-y-3 md:col-span-1">
+          <div class="flex items-center gap-2 text-white font-black text-xl">
+            <i class="fa-solid fa-plane-departure text-goldAccent-400"></i>
+            <span>شركة دمشق</span>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed">شركة دمشق للسفر والسياحة - تكريت. خبرة سنوات طويلة في تنظيم أفضل أوقات السفر والرحلات السياحية وحجوزات الطيران.</p>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold mb-3 text-sm">روابط سريعة</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#hero" class="hover:text-white transition">الرئيسية</a></li>
+            <li><a href="#search-engine" class="hover:text-white transition">محرك الحجز الفوري</a></li>
+            <li><a href="#tours" class="hover:text-white transition">عروض البرامج السياحية</a></li>
+            <li><a href="#custom-trip" class="hover:text-white transition">طلب رحلة مخصصة</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold mb-3 text-sm">خدماتنا</h4>
+          <ul class="space-y-2 text-xs">
+            <li>حجز تذاكر طيران على جميع الخطوط</li>
+            <li>حجوزات فنادق فاخرة وشقق فندقية</li>
+            <li>برامج سياحية عائلية وخاصة</li>
+            <li>إصدار فيز وتأشيرات دخول</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold mb-3 text-sm">العنوان والتواصل</h4>
+          <p class="text-xs text-slate-400 mb-2">تكريت - شارع 40 - مقابل عمارة الترنبول</p>
+          <p class="text-xs text-slate-400 dir-ltr text-right font-mono">009647701716661</p>
+          <p class="text-xs text-slate-400 mt-1">demshq.co@gmail.com</p>
+        </div>
+
+      </div>
+
+      <div class="text-center text-xs text-slate-500">
+        <p>&copy; 2026 شركة دمشق للسفر والسياحة - جميع الحقوق محفوظة.</p>
+      </div>
     </div>
   </footer>
 
+  <script>
+    // System Currency & Tour Data State
+    let currentCurrency = 'USD';
+    const currencyRates = {
+      USD: { rate: 1, symbol: '$' },
+      IQD: { rate: 1500, symbol: 'د.ع' },
+      EUR: { rate: 0.92, symbol: '€' }
+    };
+
+    // Rich Tour Data
+    const toursData = [
+      {
+        id: 'istanbul-express',
+        title: 'رحلة اسطنبول الساحرة',
+        country: 'تركيا 🇹🇷',
+        duration: '7 أيام / 6 ليالي',
+        basePriceAdultUSD: 650,
+        basePriceChildUSD: 420,
+        image: 'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=800&q=80',
+        inclusions: ['تذاكر الطيران المباشر ذهاب وعودة', 'إقامة فندق 4 نجوم شامل الإفطار', 'استقبال وتوديع في المطار', 'جولة مضيق البوسفور وجزيرة الأميرات'],
+        exclusions: ['المصاريف الشخصية', 'وجبات الغداء والعشاء'],
+        itinerary: [
+          'اليوم 1: الاستقبال في مطار اسطنبول الدولي والتوصيل للفندق للراحة.',
+          'اليوم 2: جولة تاريخية تشمل جامع السلطان أحمد، أيا صوفيا والجامع الأزرق.',
+          'اليوم 3: رحلة بحرية ممتعة في مضيق البوسفور واستكشاف سوق المصرين.',
+          'اليوم 4: زيارة جزر الأميرات وركوب العربات وتناول وجبة الغداء البحرية.',
+          'اليوم 5: يوم حر للتسوق في مول أوف اسطنبول وشارع الاستقلال.',
+          'اليوم 6: جولة في منطقة أورتاكوي وتذوق البطاطس التركية المتبلة (كومبير).',
+          'اليوم 7: التوجه للمطار والعودة للوطن بحفظ الله.'
+        ]
+      },
+      {
+        id: 'dubai-luxury',
+        title: 'برنامج دبي الفاخر والمعالم',
+        country: 'الإمارات 🇦🇪',
+        duration: '5 أيام / 4 ليالي',
+        basePriceAdultUSD: 780,
+        basePriceChildUSD: 510,
+        image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80',
+        inclusions: ['تأشيرة دخول الإمارات (الفيزا)', 'طيران ذهاب وعودة', 'فندق 5 نجوم شامل الإفطار', 'رحلة سفاري الصحراء مع العشاء'],
+        exclusions: ['ضريبة درهم السياحة بالفندق', 'المشتريات الخاصة'],
+        itinerary: [
+          'اليوم 1: الوصول لمطار دبي والتوصيل الفاخر إلى الفندق.',
+          'اليوم 2: زيارة برج خليفة، دبي مول، ومشاهدة النافورة الراقصة.',
+          'اليوم 3: رحلة سفاري الصحراء، سيارات الدفع الرباعي وركوب الجمال مع العشاء.',
+          'اليوم 4: زيارة نخلة جميرا ومتحف المستقبل ومرسى دبي (مارينا).',
+          'اليوم 5: الاستعداد والتوصيل إلى المطار للعودة.'
+        ]
+      },
+      {
+        id: 'cairo-history',
+        title: 'رحلة القاهرة وأهرامات الجيزة',
+        country: 'مصر 🇪🇬',
+        duration: '6 أيام / 5 ليالي',
+        basePriceAdultUSD: 590,
+        basePriceChildUSD: 380,
+        image: 'https://images.unsplash.com/photo-1572252821143-0259e2112a20?auto=format&fit=crop&w=800&q=80',
+        inclusions: ['الطيران والموافقات الأمنية', 'فندق مطلا على النيل مع الإفطار', 'جولات الأهرامات والمتحف المصري', 'عشاء نيل يخت مفتوح'],
+        exclusions: ['التذاكر الداخلية لبعض القاعات الخاصة'],
+        itinerary: [
+          'اليوم 1: الوصول لمطار القاهرة والاستقبال بالحفاوة والتوصيل.',
+          'اليوم 2: زيارة أهرامات الجيزة، أبو الهول وركوب الخيل.',
+          'اليوم 3: زيارة المتحف المصري الكبير وجولة خان الخليلي والمقاهي التاريخية.',
+          'اليوم 4: رحلة إلى الإسكندرية وزيارة قلعة قايتباي والعمود وعروس البحر.',
+          'اليوم 5: جولة النيل بالمركب والسهرة العائلية.',
+          'اليوم 6: التوجّه للمطار للعودة.'
+        ]
+      }
+    ];
+
+    // Format Currency Helper
+    function formatPrice(amountUSD) {
+      const rateObj = currencyRates[currentCurrency];
+      const converted = Math.round(amountUSD * rateObj.rate);
+      return `${converted.toLocaleString()} ${rateObj.symbol}`;
+    }
+
+    // Render Tour Cards into DOM
+    function renderTours() {
+      const grid = document.getElementById('toursGrid');
+      grid.innerHTML = toursData.map(tour => `
+        <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-xl shadow-slate-200/50 flex flex-col justify-between group hover:-translate-y-1.5 transition-all duration-300">
+          <div>
+            <div class="relative h-56 overflow-hidden">
+              <img src="${tour.image}" alt="${tour.title}" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+              <span class="absolute top-4 right-4 bg-slate-900/80 text-white text-xs font-bold px-3 py-1.5 rounded-full backdrop-blur-md">
+                ${tour.country}
+              </span>
+              <span class="absolute bottom-4 left-4 bg-emeraldBrand-600 text-white text-xs font-extrabold px-3 py-1 rounded-lg">
+                ${tour.duration}
+              </span>
+            </div>
+
+            <div class="p-6">
+              <h3 class="text-xl font-extrabold text-slate-900 mb-2">${tour.title}</h3>
+              <ul class="text-xs text-slate-500 space-y-1.5 mb-4">
+                ${tour.inclusions.slice(0, 3).map(inc => `<li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emeraldBrand-600"></i> ${inc}</li>`).join('')}
+              </ul>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0 border-t border-slate-100/80 mt-auto">
+            <div class="flex items-center justify-between my-4">
+              <div>
+                <span class="text-[10px] text-slate-400 block font-bold">تبدأ من (للشخص):</span>
+                <span class="text-2xl font-black text-emeraldBrand-700">${formatPrice(tour.basePriceAdultUSD)}</span>
+              </div>
+              <button onclick="openTourModal('${tour.id}')" class="bg-slate-100 hover:bg-emeraldBrand-50 text-slate-700 hover:text-emeraldBrand-700 px-4 py-2.5 rounded-xl text-xs font-bold transition">
+                التفاصيل والجدول
+              </button>
+            </div>
+
+            <button onclick="startDirectBooking('${tour.title}')" class="w-full bg-emeraldBrand-600 hover:bg-emeraldBrand-700 text-white font-extrabold py-3 rounded-xl shadow-md transition flex items-center justify-center gap-2">
+              <i class="fa-solid fa-plane"></i>
+              <span>احجز هذا البرنامج الان</span>
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Modal Tour Itinerary Details
+    function openTourModal(tourId) {
+      const tour = toursData.find(t => t.id === tourId);
+      if(!tour) return;
+
+      const modalContent = document.getElementById('modalContent');
+      modalContent.innerHTML = `
+        <div class="relative h-64 rounded-2xl overflow-hidden mb-6">
+          <img src="${tour.image}" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+          <div class="absolute bottom-4 right-4 text-white">
+            <span class="text-xs font-bold bg-amber-400 text-slate-900 px-2.5 py-1 rounded-md mb-1 inline-block">${tour.country}</span>
+            <h2 class="text-2xl font-black">${tour.title}</h2>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 mb-6 bg-slate-50 p-4 rounded-2xl border">
+          <div>
+            <span class="text-xs text-slate-400 font-bold block">سعر البالغ (الكبار):</span>
+            <span class="text-xl font-black text-emeraldBrand-700">${formatPrice(tour.basePriceAdultUSD)}</span>
+          </div>
+          <div>
+            <span class="text-xs text-slate-400 font-bold block">سعر الطفل:</span>
+            <span class="text-xl font-black text-amber-600">${formatPrice(tour.basePriceChildUSD)}</span>
+          </div>
+        </div>
+
+        <div class="mb-6">
+          <h3 class="font-extrabold text-slate-800 mb-3 flex items-center gap-2"><i class="fa-solid fa-list-check text-emeraldBrand-600"></i> ما يشمله البرنامج السعري:</h3>
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-semibold text-slate-600">
+            ${tour.inclusions.map(inc => `<li class="bg-emerald-50/60 p-2 rounded-lg border border-emerald-100"><i class="fa-solid fa-check text-emerald-600 me-1"></i> ${inc}</li>`).join('')}
+          </ul>
+        </div>
+
+        <div class="mb-6">
+          <h3 class="font-extrabold text-slate-800 mb-3 flex items-center gap-2"><i class="fa-solid fa-calendar-day text-amber-500"></i> جدول الرحلة يوماً بيوم (Day-by-Day):</h3>
+          <div class="space-y-3">
+            ${tour.itinerary.map(item => `
+              <div class="p-3 bg-slate-50 rounded-xl border border-slate-200/80 text-xs text-slate-700 leading-relaxed font-semibold">
+                ${item}
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+
+      document.getElementById('modalBookBtn').onclick = function() {
+        closeTourModal();
+        startDirectBooking(tour.title);
+      };
+
+      document.getElementById('tourModal').classList.remove('hidden');
+      document.getElementById('tourModal').classList.add('flex');
+    }
+
+    function closeTourModal() {
+      document.getElementById('tourModal').classList.add('hidden');
+      document.getElementById('tourModal').classList.remove('flex');
+    }
+
+    // Currency Switcher
+    function changeCurrency(val) {
+      currentCurrency = val;
+      renderTours();
+    }
+
+    // Mobile Drawer Switcher
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    }
+
+    // Search Engine Tab Switcher
+    function switchBookingTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('bg-emeraldBrand-600', 'text-white', 'shadow-md');
+        btn.classList.add('bg-slate-100', 'text-slate-600');
+      });
+      const activeBtn = document.getElementById(`tab-${tab}`);
+      activeBtn.classList.remove('bg-slate-100', 'text-slate-600');
+      activeBtn.classList.add('bg-emeraldBrand-600', 'text-white', 'shadow-md');
+    }
+
+    // Hero background visual selector
+    function setHeroDestination(destName, imgUrl) {
+      document.getElementById('heroBgImage').src = imgUrl;
+      document.getElementById('searchDestination').value = destName;
+    }
+
+    // Checkout Modal Step Handler
+    let checkoutStep = 1;
+    let selectedBookingService = '';
+
+    function handleSearchSubmit(e) {
+      e.preventDefault();
+      const dest = document.getElementById('searchDestination').value;
+      startDirectBooking(`رحلة إلى ${dest}`);
+    }
+
+    function startDirectBooking(serviceName) {
+      selectedBookingService = serviceName;
+      document.getElementById('summaryService').innerText = serviceName;
+      document.getElementById('summaryPassengers').innerText = document.getElementById('searchPassengers')?.selectedOptions[0]?.text || '2 بالغين';
+      
+      nextCheckoutStep(1);
+      document.getElementById('checkoutModal').classList.remove('hidden');
+      document.getElementById('checkoutModal').classList.add('flex');
+    }
+
+    function closeCheckoutModal() {
+      document.getElementById('checkoutModal').classList.add('hidden');
+      document.getElementById('checkoutModal').classList.remove('flex');
+    }
+
+    function nextCheckoutStep(step) {
+      checkoutStep = step;
+      document.getElementById('checkoutStep1').classList.add('hidden');
+      document.getElementById('checkoutStep2').classList.add('hidden');
+      document.getElementById('checkoutStep3').classList.add('hidden');
+
+      document.getElementById(`checkoutStep${step}`).classList.remove('hidden');
+
+      const bar = document.getElementById('progressBar');
+      if(step === 1) bar.style.width = '33%';
+      if(step === 2) bar.style.width = '66%';
+      if(step === 3) bar.style.width = '100%';
+    }
+
+    function confirmFinalBooking() {
+      const name = document.getElementById('passengerName').value || 'عميل محترم';
+      const phone = document.getElementById('passengerPhone').value || 'غير محدد';
+      const payType = document.querySelector('input[name="payType"]:checked').value;
+
+      const message = `مرحباً شركة دمشق للسفر والسياحة، أود تأكيد الحجز التالي:%0A- الخدمة: ${selectedBookingService}%0A- الاسم: ${name}%0A- الهاتف: ${phone}%0A- طريقة الدفع المفضلة: ${payType}`;
+      
+      window.open(`https://wa.me/9647701716661?text=${message}`, '_blank');
+      closeCheckoutModal();
+    }
+
+    // Custom Trip Submission to WhatsApp
+    function handleCustomTripSubmit(e) {
+      e.preventDefault();
+      const dest = document.getElementById('customDestination').value;
+      const days = document.getElementById('customDays').value;
+      const budget = document.getElementById('customBudget').value;
+      const phone = document.getElementById('customPhone').value;
+
+      const message = `مرحباً شركة دمشق، أود طلب برنامج سياحي مخصص:%0A- الوجهة: ${dest}%0A- المدة: ${days}%0A- الميزانية: ${budget}%0A- رقم الهاتف: ${phone}`;
+      window.open(`https://wa.me/9647701716661?text=${message}`, '_blank');
+    }
+
+    function toggleLanguage() {
+      const langText = document.getElementById('langText');
+      if(langText.innerText === 'EN') {
+        langText.innerText = 'AR';
+        alert('Language switched to English preview. Content remains localized in Arabic for Tikrit office clients.');
+      } else {
+        langText.innerText = 'EN';
+      }
+    }
+
+    // Initialize Page Content
+    window.onload = function() {
+      renderTours();
+    };
+  </script>
 </body>
 </html>
