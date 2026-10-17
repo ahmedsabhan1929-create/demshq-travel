@@ -1,0 +1,110 @@
+/* ===== Damashq Travel — Visa Explorer (3D globe) =====
+   Every selector is prefixed with .vx / #visa-explorer so it cannot affect the existing site styles. */
+#visa-explorer{--vx-bg:#050d18;--vx-bg2:#071d2f;--vx-line:rgba(255,255,255,.12);--vx-cy:#7fe3ff;--vx-gold:#e6b866;
+  position:relative;overflow:hidden;color:#eef4f9;padding:96px 0 88px;
+  background:radial-gradient(ellipse 70% 60% at 30% 40%,#0c3556 0%,transparent 60%),linear-gradient(180deg,var(--vx-bg2),var(--vx-bg) 70%)}
+#visa-explorer::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.55;
+  background:radial-gradient(1px 1px at 12% 18%,#fff9,transparent),radial-gradient(1.2px 1.2px at 78% 12%,#fff8,transparent),radial-gradient(1px 1px at 90% 62%,#fff7,transparent),radial-gradient(1px 1px at 8% 74%,#fff7,transparent),radial-gradient(1.4px 1.4px at 55% 90%,#fff8,transparent),radial-gradient(1px 1px at 38% 8%,#fff6,transparent)}
+#visa-explorer .wrap{position:relative}
+#visa-explorer .eyebrow{color:var(--vx-gold)}
+#visa-explorer .title{color:#fff}
+#visa-explorer .sub{color:#b9c9d6;max-width:640px}
+.vx-grid{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:36px;align-items:start}
+.vx-grid>*{min-width:0}
+
+/* globe stage */
+.vx-stage{position:sticky;top:96px}
+.vx-frame{position:relative;width:100%;aspect-ratio:1/1;max-height:640px;border-radius:28px;overflow:hidden;outline:0;
+  background:radial-gradient(circle at 50% 50%,#0a2a46 0%,#061424 55%,#030a13 100%);border:1px solid var(--vx-line);
+  box-shadow:0 40px 80px -40px #000,inset 0 0 120px rgba(8,40,70,.6)}
+.vx-frame:focus-visible{box-shadow:0 0 0 3px var(--vx-gold),0 40px 80px -40px #000}
+#vx-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:none;cursor:grab}
+@media(pointer:coarse){#vx-canvas{touch-action:pan-y}}   /* phones: vertical swipes keep scrolling the page; horizontal swipes / pinch drive the globe */
+#vx-canvas.drag{cursor:grabbing}#vx-canvas.hit{cursor:pointer}
+.vx-labels{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.vx-erbil{position:absolute;left:0;top:0;will-change:transform,opacity;transition:opacity .35s;pointer-events:auto;direction:ltr;text-align:center;
+  background:linear-gradient(180deg,#f3cd85,#d7a24a);color:#071d2f;border:1px solid #fff3d6;border-radius:99px;padding:2px 14px;font-weight:700;font-size:.82rem;line-height:1.55;white-space:nowrap;
+  box-shadow:0 8px 22px -8px rgba(230,184,102,.8);cursor:pointer;font-family:inherit;opacity:0}
+.vx-erbil small{display:block;font-size:.66rem;font-weight:600;opacity:.8;direction:rtl;margin-top:-3px}
+.vx-erbil:hover,.vx-erbil:focus-visible{background:#fff}
+.vx-tip{position:absolute;z-index:3;pointer-events:none;background:rgba(5,13,24,.88);backdrop-filter:blur(8px);border:1px solid var(--vx-line);color:#fff;border-radius:10px;padding:4px 12px;font-size:.82rem;white-space:nowrap;transform:translate(-50%,-140%)}
+.vx-tip[hidden]{display:none}
+.vx-tools{position:absolute;top:14px;left:14px;display:flex;flex-direction:column;gap:8px;z-index:4}
+.vx-tools button{width:42px;height:42px;border-radius:12px;border:1px solid var(--vx-line);background:rgba(7,29,47,.72);backdrop-filter:blur(10px);color:#dbe8f2;cursor:pointer;font-size:1rem;display:grid;place-items:center;transition:background .2s,color .2s,transform .2s}
+.vx-tools button:hover{background:var(--vx-gold);color:#071d2f}.vx-tools button:active{transform:scale(.94)}
+.vx-tools button:focus-visible{outline:3px solid var(--vx-gold);outline-offset:2px}
+.vx-tools button[aria-pressed=true]{color:var(--vx-gold)}
+.vx-status{position:absolute;bottom:14px;right:14px;left:14px;z-index:4;text-align:center;pointer-events:none}
+.vx-status span{display:inline-block;background:rgba(5,13,24,.82);border:1px solid var(--vx-line);border-radius:99px;padding:3px 14px;font-size:.78rem;color:#cfe0ec}
+.vx-status span.err{border-color:#e08a7a;color:#ffd9d1}
+.vx-fallback{position:absolute;inset:0;z-index:5;display:grid;place-items:center;text-align:center;padding:28px;background:radial-gradient(circle,#0a2a46,#030a13)}
+.vx-fallback[hidden]{display:none}
+.vx-fallback i{font-size:3rem;color:var(--vx-gold);margin-bottom:10px;display:block}
+.vx-fallback p{color:#cfe0ec;max-width:340px;margin:0 auto}
+.vx-hint{text-align:center;color:#8fa6b7;font-size:.8rem;margin-top:12px}
+
+/* side column */
+.vx-side{display:flex;flex-direction:column;gap:18px}
+.vx-search,.vx-panel{background:rgba(255,255,255,.045);backdrop-filter:blur(14px);border:1px solid var(--vx-line);border-radius:22px;padding:20px}
+.vx-search{position:relative;z-index:6}
+.vx-search>label{display:block;color:#dbe8f2;font-weight:700;font-size:.9rem;margin-bottom:8px}
+.vx-sw{position:relative}
+.vx-sw>i{position:absolute;top:50%;right:15px;transform:translateY(-50%);color:var(--vx-gold);pointer-events:none}
+#visa-explorer .vx-sw input{width:100%;background:rgba(3,10,19,.55);color:#fff;border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:13px 44px;font-size:1rem}
+#visa-explorer .vx-sw input::placeholder{color:#7f95a6}
+#visa-explorer .vx-sw input:focus{border-color:var(--vx-gold);box-shadow:0 0 0 3px rgba(230,184,102,.2)}
+#visa-explorer .vx-sw input::-webkit-search-cancel-button{display:none}
+.vx-clear{position:absolute;top:50%;left:8px;transform:translateY(-50%);width:32px;height:32px;border:0;border-radius:50%;background:transparent;color:#9fb3c3;cursor:pointer;font-size:1.2rem}
+.vx-clear:hover{color:#fff;background:rgba(255,255,255,.08)}
+.vx-clear[hidden]{display:none}
+.vx-count{font-size:.76rem;color:#8fa6b7;margin-top:8px}
+.vx-list{list-style:none;margin:8px 0 0;padding:6px;max-height:300px;overflow:auto;border-radius:14px;background:#06121f;border:1px solid var(--vx-line);overscroll-behavior:contain}
+.vx-list[hidden]{display:none}
+.vx-list li{display:flex;align-items:center;gap:12px;padding:8px 10px;border-radius:10px;cursor:pointer;line-height:1.5}
+.vx-list li[aria-selected=true],.vx-list li:hover{background:rgba(230,184,102,.14)}
+.vx-list .nm{flex:1;min-width:0}.vx-list .nm b{display:block;font-weight:600;font-size:.95rem}
+.vx-list .nm small{display:block;color:#8fa6b7;font-size:.74rem;direction:ltr;text-align:right;unicode-bidi:plaintext}
+.vx-list .cd{direction:ltr;font-size:.72rem;color:var(--vx-gold);border:1px solid rgba(230,184,102,.4);border-radius:6px;padding:0 6px}
+.vx-empty-s{padding:14px;text-align:center;color:#9fb3c3;font-size:.9rem}
+.vx-flag{display:inline-grid;place-items:center;width:36px;height:26px;flex:none;border-radius:5px;overflow:hidden;background:#0d2236;border:1px solid rgba(255,255,255,.14);font-size:.95rem;line-height:1}
+.vx-flag img{width:100%;height:100%;object-fit:cover}
+.vx-flag.fb{font-size:.68rem;font-weight:700;color:var(--vx-gold);direction:ltr}
+.vx-pop{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:10px}
+.vx-card{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:14px;border:1px solid var(--vx-line);background:rgba(255,255,255,.04);color:#fff;cursor:pointer;font-weight:600;font-size:.88rem;text-align:right;transition:transform .25s,background .25s,border-color .25s}
+.vx-card:hover{transform:translateY(-3px);background:rgba(230,184,102,.12);border-color:rgba(230,184,102,.5)}
+.vx-card:focus-visible{outline:3px solid var(--vx-gold);outline-offset:2px}
+.vx-card[aria-pressed=true]{border-color:var(--vx-gold);background:rgba(230,184,102,.16)}
+
+/* panel */
+.vx-panel{min-height:200px;transition:border-color .4s}
+.vx-panel.on{border-color:rgba(230,184,102,.45);animation:vxin .5s cubic-bezier(.2,.7,.2,1)}
+@keyframes vxin{from{opacity:.4;transform:translateY(10px)}}
+.vx-ph{text-align:center;color:#a8bccb;padding:22px 8px}
+.vx-ph i{font-size:2.2rem;color:var(--vx-gold);margin-bottom:10px;display:block}
+.vx-ph b{display:block;color:#fff;font-size:1.1rem;margin-bottom:4px}
+.vx-hd{display:flex;gap:14px;align-items:center;padding-bottom:16px;border-bottom:1px dashed var(--vx-line);margin-bottom:16px}
+.vx-hd .vx-flag{width:64px;height:44px;border-radius:8px;font-size:1.6rem}
+.vx-hd h3{font-size:1.7rem;color:#fff;line-height:1.3}
+.vx-en{direction:ltr;unicode-bidi:plaintext;text-align:right;color:#b9c9d6;font-size:.92rem}
+.vx-iso{display:inline-flex;gap:6px;direction:ltr;margin-top:6px}
+.vx-iso span{font-size:.72rem;font-weight:700;letter-spacing:.08em;color:var(--vx-gold);border:1px solid rgba(230,184,102,.45);border-radius:6px;padding:0 8px}
+.vx-row{display:flex;justify-content:space-between;gap:14px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:.93rem}
+.vx-row>span:first-child{color:#9fb3c3}.vx-row b{color:#fff;text-align:left}
+.vx-price{font-family:'Amiri',serif;font-size:1.5rem;color:var(--vx-gold);direction:ltr;unicode-bidi:isolate}
+.vx-sec{margin-top:14px}.vx-sec h4{color:#dbe8f2;font-size:.9rem;margin-bottom:6px}
+.vx-sec ul{list-style:none;padding:0;margin:0}.vx-sec li{position:relative;padding-right:22px;margin:4px 0;color:#cfe0ec;font-size:.9rem}
+.vx-sec li::before{content:"\f00c";font-family:"Font Awesome 6 Free";font-weight:900;position:absolute;right:0;top:1px;color:var(--vx-gold);font-size:.72rem}
+.vx-contact{margin-top:6px;padding:16px;border-radius:14px;background:rgba(230,184,102,.09);border:1px solid rgba(230,184,102,.28);color:#f4e7c9;font-weight:600;line-height:1.7}
+.vx-note{margin-top:12px;font-size:.78rem;color:#9fb3c3;line-height:1.7}
+.vx-note.warn{color:#f1d9a6}
+.vx-cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.vx-cta .btn{flex:1 1 160px}
+.vx-cta .btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.28)}
+.vx-cta .btn-ghost:hover{background:rgba(255,255,255,.08)}
+
+/* the nav gained one item: tighten the gap slightly on mid-width desktops so it still fits */
+@media(min-width:1001px){.menu{gap:19px}}
+@media(max-width:1000px){.vx-grid{grid-template-columns:minmax(0,1fr)}.vx-stage{position:relative;top:0}.vx-frame{max-height:none;max-width:560px;margin:0 auto}}
+@media(max-width:620px){#visa-explorer{padding:64px 0}.vx-frame{border-radius:22px}.vx-hd h3{font-size:1.45rem}.vx-tools button{width:38px;height:38px}.vx-search,.vx-panel{padding:16px;border-radius:18px}.vx-list{max-height:240px}.vx-erbil{font-size:.74rem;padding:1px 10px}}
+@media(prefers-reduced-motion:reduce){.vx-panel.on{animation:none}}
+.vx-tools[hidden],.vx-erbil[hidden]{display:none}
