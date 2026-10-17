@@ -19,7 +19,7 @@
   var DEV = /^(localhost|127\.|\[::1\])/.test(location.hostname) || location.protocol === 'file:' || /[?&]debug\b/.test(location.search);
   var VISA = window.DAMASHQ_VISA || { countries: {}, messages: {} };
   var EXTRA = window.DAMASHQ_COUNTRY_EXTRAS || { aliases: {}, points: {} };
-  var MSG = Object.assign({ noData: 'للاستفسار عن سعر التأشيرة والمتطلبات، تواصل معنا', nationality: '' }, VISA.messages || {});
+  var MSG = Object.assign({ noPrice: 'يرجى التواصل لمعرفة السعر', estimateNote: '', noData: 'للاستفسار عن سعر التأشيرة والمتطلبات، تواصل معنا', nationality: '' }, VISA.messages || {});
   var ERBIL = { lat: 36.19, lon: 44.01 };
   var DEG = Math.PI / 180;
   // popular destinations already used on the existing site (tours / booking form): Turkey, UAE, Malaysia, Egypt, Azerbaijan
@@ -226,6 +226,14 @@
     var v = VISA.countries && VISA.countries[code];
     return v && typeof v === 'object' && /^\d{4}-\d{2}-\d{2}$/.test(String(v.verified || '')) ? v : null;
   }
+  /* price shown beside the flag: verified price wins, else the company's estimated USD price, else null */
+  function priceFor(code) {
+    var v = verifiedVisa(code), m = v && money(v.price);
+    if (m) return { text: m, estimate: false };
+    var ep = VISA.estimatedPrices, n = ep && ep.values && ep.values[code];
+    if (typeof n === 'number' && isFinite(n)) return { text: money({ amount: n, currency: ep.currency || 'USD' }), estimate: true };
+    return null;
+  }
   function money(p) {
     if (!p || typeof p.amount !== 'number' || !isFinite(p.amount)) return '';
     var lab = (VISA.currencyLabels && VISA.currencyLabels[p.currency]) || p.currency || '';
@@ -250,12 +258,15 @@
     var hd = el('div', 'vx-hd'); hd.appendChild(flagEl(c));
     var t = el('div'); t.appendChild(el('h3', '', c.name_ar)); t.appendChild(el('div', 'vx-en', c.name_en));
     var iso = el('div', 'vx-iso'); iso.appendChild(el('span', '', c.code.toUpperCase())); if (c.iso3) iso.appendChild(el('span', '', c.iso3));
-    t.appendChild(iso); hd.appendChild(t); p.appendChild(hd);
+    t.appendChild(iso);
+    var pr = priceFor(c.code), pb = el('div', 'vx-pricebar');
+    if (pr) { pb.appendChild(el('span', 'vx-pl', 'Visa Price:')); pb.appendChild(el('span', 'vx-price', pr.text)); }
+    else pb.appendChild(el('span', 'vx-np', MSG.noPrice));
+    t.appendChild(pb); hd.appendChild(t); p.appendChild(hd);
+    if (pr && pr.estimate && MSG.estimateNote) p.appendChild(el('p', 'vx-note warn vx-est', MSG.estimateNote));
 
     var v = verifiedVisa(c.code);
     if (v) {
-      var price = money(v.price);
-      if (price) p.appendChild(row('سعر التأشيرة', el('span', 'vx-price', price)));
       if (v.visaType) p.appendChild(row('نوع التأشيرة', v.visaType));
       if (v.processing) p.appendChild(row('مدة المعالجة', v.processing));
       var d = listSec('المستندات المطلوبة', v.documents); if (d) p.appendChild(d);
@@ -273,7 +284,7 @@
       var a = el('a', 'btn btn-wa'); a.href = 'https://wa.me/' + wa + '?text=' + encodeURIComponent(text); a.target = '_blank'; a.rel = 'noopener';
       a.innerHTML = '<i class="fa-brands fa-whatsapp"></i> '; a.appendChild(document.createTextNode('استفسر عبر الواتساب')); cta.appendChild(a);
     }
-    var tel = siteTel();
+    var tel = (VISA.contact && VISA.contact.tel) ? 'tel:' + VISA.contact.tel : siteTel();
     if (tel) { var b = el('a', 'btn btn-ghost'); b.href = tel; b.innerHTML = '<i class="fa-solid fa-phone"></i> '; b.appendChild(document.createTextNode('اتصل بنا')); cta.appendChild(b); }
     p.appendChild(cta);
   }

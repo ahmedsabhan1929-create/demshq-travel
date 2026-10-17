@@ -108,3 +108,8 @@
 @media(max-width:620px){#visa-explorer{padding:64px 0}.vx-frame{border-radius:22px}.vx-hd h3{font-size:1.45rem}.vx-tools button{width:38px;height:38px}.vx-search,.vx-panel{padding:16px;border-radius:18px}.vx-list{max-height:240px}.vx-erbil{font-size:.74rem;padding:1px 10px}}
 @media(prefers-reduced-motion:reduce){.vx-panel.on{animation:none}}
 .vx-tools[hidden],.vx-erbil[hidden]{display:none}
+.vx-pricebar{display:flex;align-items:baseline;gap:8px;margin-top:8px;direction:ltr;justify-content:flex-end;flex-wrap:wrap}
+.vx-pl{font-size:.85rem;color:#b9c9d6}
+.vx-pricebar .vx-price{font-size:1.45rem;line-height:1.2}
+.vx-np{direction:rtl;font-size:.9rem;color:var(--vx-gold);font-weight:600}
+.vx-est{margin:-6px 0 14px}
